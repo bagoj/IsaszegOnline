@@ -17,6 +17,11 @@ namespace SzakdolgozatAppMvc
 
             bundles.Add(new ScriptBundle("~/bundles/login").Include(
                         "~/Scripts/Views/Login/login.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/grid").Include(
+                "~/Scripts/jqGrid/grid.locale-en.js",
+                "~/Scripts/jqGrid/jquery.jqGrid.js"
+                ));
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
@@ -28,6 +33,10 @@ namespace SzakdolgozatAppMvc
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/gridcss").Include(
+                      "~/Content/Theme/jquery-ui.css",
+                      "~/Content/ui.jqgrid.css"));
         }
     }
 }

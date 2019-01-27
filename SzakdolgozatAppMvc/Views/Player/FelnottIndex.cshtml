@@ -1,15 +1,11 @@
 ﻿<table id="jqGrid"></table>
 <div id="jqGridPager"></div>
 
-<link href="~/Content/Theme/jquery-ui.css" rel="stylesheet" />
-<link href="~/Content/ui.jqgrid.css" rel="stylesheet" />
+@Styles.Render("~/Content/gridcss")
 
 @section scripts{
 
-
-    <script src="@Url.Content("~/Scripts/jqGrid/grid.locale-en.js")"></script>
-    <script src="@Url.Content("~/Scripts/jqGrid/jquery.jqGrid.js")"></script>
-
+    @Scripts.Render("~/bundles/grid")
     <script>
         $(function () {
             $grid = $("#jqGrid").jqGrid({

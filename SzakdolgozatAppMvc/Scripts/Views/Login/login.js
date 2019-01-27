@@ -7,5 +7,5 @@
         data: { username: username, pswd: pswd }
     }).done(function (data) {
         window.alert(data);
-        }); //UserNameFoot
+        });
 }
