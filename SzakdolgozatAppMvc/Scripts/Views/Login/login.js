@@ -6,7 +6,6 @@
         url: window.location.origin + '/Login/GetFelhasznalo',
         data: { username: username, pswd: pswd }
     }).done(function (data) {
-        $('#UserNameFoot').val(username);
-        $('#LogoutMenu').removeClass('hide');
+        window.alert(data);
         }); //UserNameFoot
 }
