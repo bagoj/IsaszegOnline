@@ -1,0 +1,28 @@
+﻿<table id="jqGrid"></table>
+<div id="jqGridPager"></div>
+
+<link href="~/Content/Theme/jquery-ui.css" rel="stylesheet" />
+<link href="~/Content/ui.jqgrid.css" rel="stylesheet" />
+
+@section scripts{
+
+
+    <script src="@Url.Content("~/Scripts/jqGrid/grid.locale-en.js")"></script>
+    <script src="@Url.Content("~/Scripts/jqGrid/jquery.jqGrid.js")"></script>
+
+    <script>
+        $(function () {
+            $grid = $("#jqGrid").jqGrid({
+                url: '@Url.Action("GetPlayer","Player")',
+                mtype: 'GET',
+                datatype: 'json',
+                colModel: [
+                    { label: 'Név', name: 'Name' },
+                    { label: 'Cím', name: 'Address' },
+                    {label:'Város',name: 'City'},
+                ],
+                loadonce: true
+            });
+        });
+    </script>
+}
