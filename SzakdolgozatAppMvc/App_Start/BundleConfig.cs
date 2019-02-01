@@ -16,7 +16,7 @@ namespace SzakdolgozatAppMvc
 
 
             bundles.Add(new ScriptBundle("~/bundles/login").Include(
-                        "~/Scripts/Views/Login/login.js"));
+                        "~/Scripts/Views/login.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/grid").Include(
                 "~/Scripts/jqGrid/grid.locale-en.js",

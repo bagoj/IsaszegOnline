@@ -17,12 +17,12 @@ namespace SzakdolgozatAppMvc.Controllers
             return View();
         }
 
-        public string GetFelhasznalo(string username, string pswd)
+        public bool GetFelhasznalo(string username, string pswd)
         {
             bool belep_E = userService.GetUser(username, pswd);
             if (belep_E)
-                return "Sikeres bejelentkezés: " + username.ToString() + " felhasználóval!";
-            else return "Sikertelen bejelentkezés!";
+                return true;
+            else return false;
         }
     }
 }
