@@ -1,21 +1,22 @@
 ﻿@Scripts.Render("~/bundles/login")
+<body>
+    <section class="container login-container">
+        <section class="row">
+            <div class="col-xs-6 col-md-6 col-lg-6 col-xl-6">
+                <h1 class="login-title">Bejelentkezés</h1>
+                    <div class="input-group">
+                        <input class="form-control" id="UserName" name="UserName" placeholder="Felhasználónév" type="text" value="">
+                    </div>
+                    <div class="input-group">
+                        <input class="form-control" id="Password" name="Password" placeholder="Jelszó" type="password">
+                    </div>
+                    <button type="submit" class="btn btn-primary" onclick="bejelentkezes()">
+                        Bejelentkezés
+                    </button>
+            </div>
+        </section>
+    </section>
 
-<div class="jumbotron">
-    Isaszegi Sport Egyesület bejelentkezés:
-    <br />
-    <label>
-        Felhasználó név:
-    </label>
-    <a> @Html.TextBox("UserName")</a>
-    <br />
-    <label>
-        Jelszó:
-    </label>
-    <a>@Html.Password("Password")</a>
-    <br />
-    <button onclick="bejelentkezes()">
-        Log IN
-    </button>
-</div>
 
+</body>
 

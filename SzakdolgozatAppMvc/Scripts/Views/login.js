@@ -6,10 +6,10 @@
         url: window.location.origin + '/Login/GetFelhasznalo',
         data: { username: username, pswd: pswd }
     }).done(function (data) {
-        if (data === true || data === 'true') {
+        if (data === true || data === 'true'|| data == 'True') {
             //itt kéne megcsinálni a profil fület
         }
-        else
+        else window.alert('Sikertelen bejelentkezés!');
             //itt nem
         });
 }
