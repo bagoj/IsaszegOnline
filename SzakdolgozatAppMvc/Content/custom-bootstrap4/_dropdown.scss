@@ -1,0 +1,62 @@
+﻿// Custom theme variables and mixins
+
+//
+// Dropdown menus
+// --------------------------------------------------
+
+.dropdown-menu {
+    min-width: $dropdown-min-width;
+    background-color: $dropdown-bg;
+    margin: 0 0 0 -1px; // override default ul
+    border: $dropdown-border;
+    z-index: $zindex-dropdown;
+    // Links within the dropdown menu
+    > a {
+        display: block;
+        padding: 5px 15px;
+        line-height: $line-height-base;
+        color: $dropdown-link-color;
+        white-space: nowrap; // prevent links from randomly breaking onto new lines
+    }
+}
+
+// Hover/Focus state
+.dropdown-item {
+    line-height: 2em !important;
+    color: #fff !important;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        color: $dropdown-link-hover-color;
+        background-color: $dropdown-link-hover-bg;
+    }
+}
+
+.info-dropdown {
+    padding: 10px;
+
+    li {
+        color: #fff;
+
+        h3 {
+            display: block;
+            margin: 10px 15px 0 15px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        label {
+            margin: 0 15px;
+            font-weight: normal;
+        }
+
+        &.divider {
+            padding: 0;
+            display: block;
+            border-bottom: 1px solid #fff;
+            margin: 10px 15px -1px 15px;
+        }
+    }
+}

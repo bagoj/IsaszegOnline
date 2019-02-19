@@ -1,0 +1,87 @@
+// Custom theme variables and mixins
+@import url("../variables.less");
+@import url("../mixins.less");
+
+
+
+.test-res {
+    position:fixed;
+    z-index:9999;
+    bottom:50px;
+    left:0;
+    padding:20px 30px;
+    color:#000;
+    display:none;
+}
+
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+    .test-res {
+        display: block;
+        background-color:red;
+        .res-sm {
+        }
+        .res-md {
+            display:none;
+        }
+        .res-lg {
+            display:none;
+        }
+        .res-xl {
+            display:none;
+        }
+    }
+}
+
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+    .test-res {
+        display: block;
+        background-color:greenyellow;
+        .res-sm {
+            display:none;
+        }
+        .res-md {
+        }
+        .res-lg {
+            display:none;
+        }
+        .res-xl {
+            display:none;
+        }
+    }
+}
+
+@media (min-width: @screen-lg-min) and (max-width: @screen-lg-max){
+    .test-res {
+        display: block;
+        background-color:burlywood;
+        .res-sm {
+            display:none;
+        }
+        .res-md {
+            display:none;
+        }
+        .res-lg {
+        }
+        .res-xl {
+            display:none;
+        }
+    }
+}
+
+@media (min-width: @screen-xl-min) {
+    .test-res {
+        display: block;
+        background-color:coral;
+        .res-sm {
+            display:none;
+        }
+        .res-md {
+            display:none;
+        }
+        .res-lg {
+            display:none;
+        }
+        .res-xl {
+        }
+    }
+}

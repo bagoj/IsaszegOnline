@@ -1,0 +1,68 @@
+﻿// Custom theme variables and mixins
+@mixin hide-text() {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+//
+// Responsive: Utility classes
+// --------------------------------------------------
+
+// Visibility utilities
+
+.visible-xl {
+    display: none !important;
+}
+
+.visible-lg {
+    @media (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
+        display: block !important;
+    }
+}
+
+.visible-xl {
+    @media (min-width: $screen-xl-min) {
+        display: block !important;
+    }
+}
+
+
+.hidden-lg {
+    @media (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
+        display: none !important;
+    }
+}
+
+.hidden-xl {
+    @media (min-width: $screen-xl-min) {
+        display: none !important;
+    }
+}
+
+.hide {
+    display: none !important;
+}
+
+.show {
+    display: block !important;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.text-hide {
+    @include hide-text();
+}
+
+.hidden {
+    display: none !important;
+}
+
+.affix {
+    position: fixed;
+}
+

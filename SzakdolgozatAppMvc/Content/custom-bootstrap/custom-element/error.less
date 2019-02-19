@@ -1,0 +1,31 @@
+﻿@import url("../mixins.less");
+
+.error-container {
+    margin: 50px auto;
+    text-align: center;
+    background-color: #f1f1f1;
+    width: 720px;
+    .box-shadow( 0 0 5px 2px rgba( 0,0,0,0.1 ) );
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.error-title {
+    margin: 0;
+    background-color: #6f6e73;
+    font-size: 24px;
+    padding: 10px 0;
+    color: #fff;
+}
+
+.error-image {
+    margin: 50px 0;
+
+    & + div {
+        margin: 0 25px;
+
+        & + .btn {
+            margin: 25px 0;
+        }
+    }
+}

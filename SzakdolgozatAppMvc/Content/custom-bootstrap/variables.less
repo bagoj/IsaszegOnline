@@ -1,0 +1,427 @@
+//
+// Variables
+// --------------------------------------------------
+@import url("../bootstrap/variables.less");
+
+// Global values
+// --------------------------------------------------
+
+@header-height: 50px;
+@footer-height: @header-height;
+@footer-feedback-height: @footer-height;
+@scrollbar:17px;
+
+// Grays
+// -------------------------
+
+// Layout base colors
+// -------------------------
+
+@header-bg: @gray-dark;
+@footer-bg: @header-bg;
+@footer-feedback-bg: @gray;
+
+// Brand colors
+// -------------------------
+
+@brand-primary:         #ec7b2f;    //Changed
+@brand-success:         #73b573;    //Changed
+@brand-warning:         #f9ac3e;    //Changed
+@brand-danger:          #ca554e;    //Changed
+@brand-info:            #4f96b3;    //Changed
+
+// Scaffolding
+// -------------------------
+
+@body-bg:               #f1f1f1;
+
+// Links
+// -------------------------
+
+// Typography
+// -------------------------
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+
+@font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+@font-family-base:        @font-family-sans-serif;
+
+@font-size-base:          14px;
+@font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
+@font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
+
+@font-size-h1:            floor((@font-size-base * 2.6)); // ~36px
+@font-size-h2:            floor((@font-size-base * 2.15)); // ~30px
+@font-size-h3:            ceil((@font-size-base * 1.7)); // ~24px
+@font-size-h4:            ceil((@font-size-base * 1.25)); // ~18px
+@font-size-h5:            @font-size-base;
+@font-size-h6:            ceil((@font-size-base * 0.85)); // ~12px
+
+// Unit-less `line-height` for use in components like buttons.
+@line-height-base:        1.428571429; // 20/14
+// Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+@line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
+
+// By default, this inherits from the `<body>`.
+@headings-font-family:    inherit;
+@headings-font-weight:    500;
+@headings-line-height:    1.1;
+@headings-color:          @brand-primary;
+
+
+// Iconography
+// -------------------------
+
+
+// Components
+// -------------------------
+// Based on 14px font-size and 1.428 line-height (~20px to start)
+
+@padding-base-vertical:     6px;
+@padding-base-horizontal:   12px;
+
+@padding-large-vertical:    10px;
+@padding-large-horizontal:  16px;
+
+@padding-small-vertical:    5px;
+@padding-small-horizontal:  10px;
+
+@padding-xs-vertical:       1px;
+@padding-xs-horizontal:     5px;
+
+@line-height-large:         1.33;
+@line-height-small:         1.5;
+
+@border-radius-base:             0;     //Changed
+@border-radius-large:            0;     //Changed
+@border-radius-small:            0;     //Changed
+
+// Global color for active items (e.g., navs or dropdowns).
+@component-active-color:    #fff;
+// Global background color for active items (e.g., navs or dropdowns).
+@component-active-bg:       @brand-primary;
+
+// Width of the `border` for generating carets that indicator dropdowns.
+@caret-width-base:          4px;
+// Carets increase slightly in size for larger components.
+@caret-width-large:         5px;
+
+// Tables
+// -------------------------
+
+// Buttons
+// -------------------------
+
+@btn-font-weight:                normal;
+
+@btn-default-color:              @text-color;
+@btn-default-bg:                 #fff;
+@btn-default-border:             #ccc;
+
+@btn-primary-color:              #fff;
+@btn-primary-bg:                 @brand-primary;
+@btn-primary-border:             darken(@btn-primary-bg, 5%);
+
+@btn-success-color:              #fff;
+@btn-success-bg:                 @brand-success;
+@btn-success-border:             darken(@btn-success-bg, 5%);
+
+@btn-info-color:                 #fff;
+@btn-info-bg:                    @brand-info;
+@btn-info-border:                darken(@btn-info-bg, 5%);
+
+@btn-warning-color:              #fff;
+@btn-warning-bg:                 @brand-warning;
+@btn-warning-border:             darken(@btn-warning-bg, 5%);
+
+@btn-danger-color:               #fff;
+@btn-danger-bg:                  @brand-danger;
+@btn-danger-border:              darken(@btn-danger-bg, 5%);
+
+@btn-link-disabled-color:        @gray-light;
+
+
+// Forms
+// -------------------------
+
+// `<input>` background color
+@input-bg:                       #fff;
+// `<input disabled>` background color
+@input-bg-disabled:              @gray-lighter;
+
+// Text color for `<input>`s
+@input-color:                    @gray;
+// `<input>` border color
+@input-border:                   #ccc;
+// `<input>` border radius
+@input-border-radius:            @border-radius-base;
+// Border color for inputs on focus
+@input-border-focus:             lighten(@brand-primary, 20%);
+
+// Placeholder text color
+@input-color-placeholder:        @gray-light;
+
+// Default `.form-control` height
+@input-height-base:              (@line-height-computed + (@padding-base-vertical * 2) + 2);
+// Large `.form-control` height
+@input-height-large:             (ceil(@font-size-large * @line-height-large) + (@padding-large-vertical * 2) + 2);
+// Small `.form-control` height
+@input-height-small:             (floor(@font-size-small * @line-height-small) + (@padding-small-vertical * 2) + 2);
+
+@legend-color:                   @gray-dark;
+@legend-border-color:            #e5e5e5;
+
+// Background color for textual input addons
+@input-group-addon-bg:           @gray-lighter;
+// Border color for textual input addons
+@input-group-addon-border-color: @input-border;
+
+// Sidebar
+// -------------------------
+@sidebar-menu-bg:#6f6e73;
+@sidebar-sub-menu-bg:darken(@sidebar-menu-bg, 10%);
+
+// Dropdowns
+// -------------------------
+
+//== Dropdowns
+//
+//## Dropdown menu container and contents.
+
+// Background for the dropdown menu.
+@dropdown-bg:                    lighten(@header-bg, 10%);
+
+// Dropdown Minimum width:
+@dropdown-min-width:            200px;
+
+// Dropdown menu `border-color`.
+@dropdown-border:                0;
+// Dropdown menu `border-color` for IE8.
+@dropdown-fallback-border:       @dropdown-border;
+// Divider color for between dropdown items.
+@dropdown-divider-bg:            lighten(@dropdown-bg, 10%);
+
+// Dropdown menu `padding`.
+@dropdown-padding:              0;
+
+// Dropdown link text color.
+@dropdown-link-color:            #fff;
+// Hover color for dropdown links.
+@dropdown-link-hover-color:      #fff;
+// Hover background for dropdown links.
+@dropdown-link-hover-bg:         lighten(@dropdown-bg, 10%);
+
+// Active dropdown menu item text color.
+@dropdown-link-active-color:     @component-active-color;
+// Active dropdown menu item background color.
+@dropdown-link-active-bg:        @component-active-bg;
+
+// Disabled dropdown menu item background color.
+@dropdown-link-disabled-color:   @gray-light;
+
+// Text color for headers within dropdown menus.
+@dropdown-header-color:          @gray-light;
+
+// Note: Deprecated @dropdown-caret-color as of v3.1.0
+@dropdown-caret-color:           #fff;
+
+// COMPONENT VARIABLES
+// --------------------------------------------------
+
+
+// Z-index master list
+// -------------------------
+// Used for a bird's eye view of components dependent on the z-axis
+// Try to avoid customizing these :)
+
+
+@zindex-header-popup:      2000;    //custom
+
+@zindex-sidebar:           1020;    //custom
+@zindex-sidebar-sub:       1070;    //custom
+
+@zindex-footer-panel:      1080;    //custom
+
+// Media queries breakpoints
+// --------------------------------------------------
+
+// Extra small screen / phone
+// Note: Deprecated @screen-xs and @screen-phone as of v3.0.1
+
+// Small screen / tablet
+// Note: Deprecated @screen-sm and @screen-tablet as of v3.0.1
+
+// Medium screen / desktop
+// Note: Deprecated @screen-md and @screen-desktop as of v3.0.1
+
+// Large screen / wide desktop
+// Note: Deprecated @screen-lg and @screen-lg-desktop as of v3.0.1
+
+// Extra Large screen / wide desktop
+// Note: Custom added to BS 3.1
+@screen-xl:                  1600px;
+@screen-xl-min:              @screen-xl;
+@screen-xl-desktop:          @screen-xl-min;
+
+// So media queries don't overlap when required, provide a maximum
+@screen-xs-max:              (@screen-sm-min - 1);
+@screen-sm-max:              (@screen-md-min - 1);
+@screen-md-max:              (@screen-lg-min - 1);
+@screen-lg-max:              (@screen-xl-min - 1);
+
+
+// Grid system
+// --------------------------------------------------
+
+// Number of columns in the grid system
+
+// Padding, to be divided by two and applied to the left and right of all columns
+
+// Navbar collapse
+
+// Point at which the navbar becomes uncollapsed
+
+// Point at which the navbar begins collapsing
+
+// Navbar
+// -------------------------
+
+// Basics of a navbar
+
+// Navbar links
+
+// Navbar brand label
+
+// Navbar toggle
+@navbar-default-toggle-icon-bar-bg:        #ccc;
+
+
+// Inverted navbar
+//
+// Reset inverted navbar basics
+
+// Inverted navbar links
+
+// Inverted navbar brand label
+
+// Inverted navbar toggle
+
+// Navs
+// -------------------------
+
+// Tabs
+@nav-tabs-border-color:                     @gray-light;
+
+@nav-tabs-link-bg:                          @gray;
+@nav-tabs-link-color:                       #fff;
+@nav-tabs-link-border-color:                @gray;
+
+@nav-tabs-link-hover-bg:                    lighten(@brand-primary, 5%);
+@nav-tabs-link-hover-color:                 #fff;
+@nav-tabs-link-hover-border-color:          @nav-tabs-link-hover-bg;
+
+
+@nav-tabs-active-link-hover-bg:             @brand-primary;
+@nav-tabs-active-link-hover-color:          #fff;
+@nav-tabs-active-link-hover-border-color:   @brand-primary;
+
+@nav-tabs-justified-link-border-color:            #ddd;
+@nav-tabs-justified-active-link-border-color:     @body-bg;
+
+// Pills
+@nav-pills-border-radius:                   @border-radius-base;
+@nav-pills-active-link-hover-bg:            @component-active-bg;
+@nav-pills-active-link-hover-color:         @component-active-color;
+
+
+// Pagination
+// -------------------------
+
+// Pager
+// -------------------------
+
+// Jumbotron
+// -------------------------
+
+// Form states and alerts
+// -------------------------
+
+// Tooltips
+// -------------------------
+
+// Popovers
+// -------------------------
+
+// Labels
+// -------------------------
+
+// Modals
+// -------------------------
+
+// Alerts
+// -------------------------
+
+// Progress bars
+// -------------------------
+
+// List group
+// -------------------------
+//** Background color of single list items on hover
+@list-group-hover-bg: #6f6e73;
+
+@list-group-link-color: #555;
+@list-group-link-hover-color: #fff;
+@list-group-link-heading-color: #333;
+
+// Panels
+// -------------------------
+
+// Thumbnails
+// -------------------------
+
+// Wells
+// -------------------------
+
+// Badges
+// -------------------------
+
+// Breadcrumbs
+// -------------------------
+
+// Carousel
+// ------------------------
+
+// Close
+// ------------------------
+
+// Code
+// ------------------------
+
+// Type
+// ------------------------
+
+// Miscellaneous
+// -------------------------
+
+// Hr border color
+
+// Horizontal forms & lists
+
+
+// Container sizes
+// --------------------------------------------------
+
+// Small screen / tablet
+
+// Medium screen / desktop
+
+// Large screen / wide desktop
+
+// Extra Large screen / wide desktop
+@container-extra-large-desktop:((1320px + @grid-gutter-width));
+@container-xl:                 @container-extra-large-desktop;

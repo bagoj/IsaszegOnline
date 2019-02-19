@@ -1,0 +1,78 @@
+// Custom theme variables and mixins
+@import url("../variables.less");
+@import url("../mixins.less");
+
+
+
+// jqGrid make it more bootstrap
+//
+// ------------------------------------------------
+
+@jq-header-heigth: 30px;
+@jq-footer-heigth: 30px;
+
+.ui-jqgrid {
+    //Header
+    .ui-jqgrid-htable {
+        .ui-jqgrid-labels {
+            th {
+                padding: 8px;
+                font-weight: bold;
+                color: @text-color;
+            }
+        }
+    }
+
+    .ui-jqgrid-hbox {
+        padding: 0;
+    }
+    .ui-jqgrid-resize-ltr {
+        margin: -8px -8px -8px 0;
+        width: 16px;
+        padding-bottom: 36px;
+    }
+    //Body
+    .ui-jqgrid-bdiv {
+        .ui-jqgrid-btable {
+            tr {
+                td {
+                    padding: 8px;
+                    color: @text-color;
+                }
+            }
+        }
+    }
+
+    .ui-jqgrid-titlebar {
+        display:none;
+    }
+
+    .ui-state-highlight {
+        background: none;
+        border-color: #aaa;
+        background-color: lighten(@brand-primary, 30%);
+    }
+
+    .ui-state-hover {
+        cursor: pointer;
+
+        &.ui-state-highlight {
+            background-color: lighten(@brand-primary, 35%);
+        }
+    }
+    //grid footer
+    .ui-jqgrid-pager {
+        height: @jq-footer-heigth;
+
+        .ui-pg-table {
+            td {
+                font-size: @font-size-base;
+            }
+
+            .ui-pg-input {
+                height: auto;
+                font-size: 12px;
+            }
+        }
+    }
+}

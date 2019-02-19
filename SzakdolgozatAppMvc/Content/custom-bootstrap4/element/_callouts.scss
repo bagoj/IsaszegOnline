@@ -1,0 +1,59 @@
+﻿// Custom theme variables and mixins
+/*
+ * Callouts
+ *
+ * Not quite alerts, but custom and helpful notes for folks reading the docs.
+ * Requires a base and modifier class.
+ */
+
+/* Common styles for all types */
+.bs-callout {
+    margin: 20px 0;
+    padding: 20px;
+    border-left: 3px solid #eee;
+
+    h4 {
+        margin: 10px 0 !important; //I know this is lame but these styles are just utilities not necessary
+        font-size: 18px !important; //I know this is lame but these styles are just utilities not necessary
+        padding: 0 !important; //I know this is lame but these styles are just utilities not necessary
+        border: 0 !important; //I know this is lame but these styles are just utilities not necessary
+    }
+
+    p {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    code {
+        background-color: #fff;
+        border-radius: 3px;
+    }
+
+    &-danger {
+        background-color: lighten($brand-danger, 37%);
+        border-color: $brand-danger;
+
+        h4 {
+            color: $brand-danger !important;
+        }
+    }
+
+    &-info {
+        background-color: lighten($brand-info, 37%);
+        border-color: $brand-info;
+
+        h4 {
+            color: $brand-info !important;
+        }
+    }
+
+    &-warning {
+        background-color: lighten($brand-warning, 37%);
+        border-color: $brand-warning;
+
+        h4 {
+            color: $brand-warning !important;
+        }
+    }
+}

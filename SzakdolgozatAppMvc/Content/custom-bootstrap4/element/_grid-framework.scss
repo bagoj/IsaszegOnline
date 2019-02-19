@@ -1,0 +1,100 @@
+﻿// Framework grid generation
+//
+// Used only by Bootstrap to generate the correct number of grid classes given
+// any value of `$grid-columns`.
+
+//Bootstrap 3.3.7-ből konvertálva
+
+@mixin make-grid-columns() {
+    $index: 1;
+
+    $item-list: ();
+
+    @while $index <= $grid-columns {
+        $item-list: append($item-list, ".col-xs-#{$index}");
+        $item-list: append($item-list, ".col-sm-#{$index}");
+        $item-list: append($item-list, ".col-md-#{$index}");
+        $item-list: append($item-list, ".col-lg-#{$index}");
+
+        $index: $index + 1;
+    }
+
+    #{$item-list} {
+        position: relative;
+        // Prevent columns from collapsing when empty
+        min-height: 1px;
+        // Inner gutter via padding
+        padding-left: ceil($grid-gutter-width / 2);
+        padding-right: floor($grid-gutter-width / 2);
+    }
+}
+
+@mixin float-grid-columns($class) {
+    $index: 1;
+
+    $item-list: ();
+
+    @while $index <= $grid-columns {
+        $item-list: append($item-list, ".col-#{$class}-#{$index}");
+
+        $index: $index + 1;
+    }
+
+    #{$item-list} {
+        float: left;
+    }
+}
+
+@mixin calc-grid-column($index, $class, $type) {
+    @if ($type == width) and ($index > 0) {
+        .col-#{$class}-#{$index} {
+            width: percentage($index / $grid-columns);
+        }
+    }
+
+    @if ($type == push) and ($index > 0) {
+        .push-#{$class}-#{$index} {
+            left: percentage($index / $grid-columns);
+        }
+    }
+
+    @if ($type == push) and ($index == 0) {
+        .push-#{$class}-0 {
+            left: auto;
+        }
+    }
+
+    @if ($type == float) and ($index > 0) {
+        .float-#{$class}-#{$index} {
+            right: percentage($index / $grid-columns);
+        }
+    }
+
+    @if ($type == float) and ($index == 0) {
+        .float-#{$class}-0 {
+            right: auto;
+        }
+    }
+
+    @if $type == offset {
+        .offset-#{$class}-#{$index} {
+            margin-left: percentage($index / $grid-columns);
+        }
+    }
+}
+
+@mixin loop-grid-columns($index, $class, $type) {
+    @while $index >= 0 {
+        @include calc-grid-column($index, $class, $type);
+
+        $index: $index - 1;
+    }
+}
+
+@mixin make-grid($class) {
+    @include float-grid-columns($class);
+    @include loop-grid-columns($grid-columns, $class, width);
+    @include loop-grid-columns($grid-columns, $class, float);
+    @include loop-grid-columns($grid-columns, $class, push);
+    @include loop-grid-columns($grid-columns, $class, offset);
+}

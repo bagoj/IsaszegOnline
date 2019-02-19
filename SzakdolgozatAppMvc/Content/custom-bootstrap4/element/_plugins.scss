@@ -1,0 +1,121 @@
+﻿// Custom theme variables and mixins
+
+.btn-primary {
+    @include text-shadow();
+}
+
+// file input
+.file-input-name input[type=text][readonly=true] {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    @include box-shadow(none);
+}
+
+/* Retina-ize icons */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 2dppx) {
+    .select2-search input,
+    .select2-search-choice-close,
+    .select2-container .select2-choice abbr,
+    .select2-container .select2-choice .select2-arrow b {
+        background-image: url('select2x2.png') !important;
+        background-repeat: no-repeat !important;
+        background-size: 60px 40px !important;
+    }
+
+    .select2-search input {
+        background-position: 100% -21px !important;
+    }
+}
+
+// CSS3 Loader for feedback panel
+// -------------------------
+
+
+// ToastR plugin
+// -------------------------
+
+$gutter-padding: $scrollbar + 5px;
+
+.toast-top-left {
+    top: $header-height + 10px;
+    left: $gutter-padding;
+}
+
+.toast-top-right {
+    top: $header-height + 10px;
+    right: $gutter-padding;
+}
+
+.toast-bottom-right {
+    right: $gutter-padding;
+    bottom: $footer-height + 10px;
+}
+
+.toast-bottom-left {
+    left: $gutter-padding;
+    bottom: $footer-height + 10px;
+}
+
+#toast-container {
+    > div {
+        margin: 0 0 6px;
+        padding: 15px 15px 15px 50px;
+        width: 300px;
+        border-radius: 0;
+        background-position: 15px center;
+        background-repeat: no-repeat;
+        @include box-shadow(0 0 8px 1px rgba(0,0,0,0.1));
+        color: #fff;
+        @include opacity(0.8);
+    }
+
+    > :hover {
+        @include box-shadow(0 0 8px 1px rgba(0,0,0,0.1));
+        @include opacity(1);
+        cursor: pointer;
+    }
+
+    .toast-success {
+        background-color: saturate($brand-success, 5%);
+        border-left: 5px solid lighten($brand-success, 10%);
+    }
+
+    .toast-error {
+        background-color: saturate($brand-danger, 5%);
+        border-left: 5px solid lighten($brand-danger, 10%);
+    }
+
+    .toast-info {
+        background-color: saturate($brand-info, 5%);
+        border-left: 5px solid lighten($brand-info, 10%);
+    }
+
+    .toast-warning {
+        background-color: saturate($brand-primary, 5%);
+        border-left: 5px solid lighten($brand-primary, 10%);
+    }
+}
+
+.hatarido {
+    &.col-xl-3 {
+        width: 25%;
+    }
+
+    & + .input-group {
+        float: left;
+    }
+}
+
+h3.content-title {
+    width: 100%;
+    a[data-toggle="collapse"] {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+tr td[role=gridcell] a, tr.ui-state-highlight td[role=gridcell] a, tr.ui-state-hover td[role=gridcell] a {
+    color: #428bca;
+    text-decoration: underline;
+}

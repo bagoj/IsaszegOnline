@@ -1,0 +1,195 @@
+// Custom theme variables and mixins
+@import url("../variables.less");
+@import url("../mixins.less");
+
+i[data-icon] {
+    position: relative;
+    display: inline-block;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1em;
+    width: 1em;
+    overflow: hidden;
+    padding: 2px;
+}
+
+.input-group-addon {
+    i[data-icon] {
+        top: 2px;
+        margin: -6px;
+        width: 28px;
+        height: 28px;
+    }
+}
+
+.btn-primary {
+    i[data-icon] {
+        top: 2px;
+        margin: -8px;
+        width: 28px;
+        height: 28px;
+    }
+}
+
+.btn-default {
+    i[data-icon] {
+        top: 9px;
+        display: inline;
+        margin-right: 5px;
+        font-size: 32px;
+    }
+}
+
+.navbar-fixed-top {
+    i[data-icon] {
+        position: absolute;
+        width: 36px;
+        height: 36px;
+        font-size: 32px;
+        top: 8px;
+        left: 8px;
+    }
+}
+
+.sidebar-nav {
+    i[data-icon] {
+        display: inline-block;
+        width: 36px;
+        height: 36px;
+        margin: 0 15px;
+        font-size: 32px;
+        vertical-align: middle;
+    }
+}
+
+.sidebar-nav-sub {
+    .back-navigation {
+        i[data-icon] {
+            display: block;
+            margin: 0 auto;
+            color: #fff;
+        }
+    }
+}
+
+.tab-panel-group {
+    i[data-icon] {
+        display: block;
+        margin: 10px auto;
+        width: 36px;
+        height: 36px;
+        font-size: 32px;
+    }
+}
+
+td {
+    & > i[data-icon=x],
+    & > i[data-icon=w] {
+        font-size: 16px;
+        margin: -5px 0;
+        padding: 0;
+    }
+
+    & > i[data-icon=x] {
+        color: green;
+    }
+
+    & > i[data-icon=w] {
+        color: maroon;
+    }
+}
+
+h4.modal-title {
+    i[data-icon] {
+        padding-right: 40px;
+        margin-bottom: -10px;
+    }
+}
+
+.control-label,
+.nav-tabs > li,
+.content-title,
+.content-title > a,
+.btn-primary,
+.navbar-fixed-bottom .btn-group .btn-primary,
+.menu-item > .list-group-item,
+.tab-panel-group-title,
+.tab-panel-group > .nav-tabs label,
+.toggle-list-item > .btn,
+.page-header,
+.ui-th-column > div,
+.field-validation-error > span,
+.switch-left,
+.switch-right,
+.modal-title,
+.modal-footer > button {
+    & > i[data-icon][onclick] {
+        bottom: -8px;
+        margin-top: -8px;
+        padding-right: 18px;
+        font-size: 16px;
+        color: @brand-success;
+        cursor: pointer;
+    }
+}
+
+.content-title,
+.content-title > a {
+    & > i[data-icon][onclick] {
+        bottom: -6px;
+        margin-top: -2px;
+    }
+}
+
+.content-title > a > i[data-icon="V"].szuretlen {
+    color: #6f6e73;
+}
+
+.navbar-fixed-bottom .btn-group .btn-primary > i[data-icon][onclick] {
+    margin-bottom: -8px;
+    margin-left: 2px;
+    margin-right: -18px;
+}
+
+.ui-jqgrid-buttons .btn-primary > i[data-icon][onclick] {
+    top: 5px;
+    margin-right: -8px;
+    margin-left: 0;
+}
+
+.menu-item > .list-group-item > i[data-icon][onclick] {
+    margin-left: 2px;
+    bottom: -12px;
+}
+
+.tab-panel-group-title > i[data-icon][onclick] {
+    display: inline;
+    top: 2px;
+}
+
+.tab-panel-group > .nav-tabs label > i[data-icon][onclick] {
+    display: inline;
+    top: 4px;
+    padding-right: 0;
+}
+
+.toggle-list-item > .btn > i[data-icon][onclick] {
+    top: 4px;
+    padding-right: 0;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.page-header > i[data-icon][onclick] {
+    top: 4px;
+}
+
+.modal-title > i[data-icon][onclick] {
+    top: -2px;
+}
+
+.modal-footer > button > i[data-icon][onclick] {
+    top: 4px;
+    padding-right: 0;
+}

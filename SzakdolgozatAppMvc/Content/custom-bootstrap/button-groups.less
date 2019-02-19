@@ -1,0 +1,62 @@
+@import "variables.less";
+@import "mixins.less";
+ 
+//
+// Button groups
+// --------------------------------------------------
+
+// Make the div behave like a button
+.btn-group,
+.btn-group-vertical {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle; // match .btn alignment given font-size hack above
+  > .btn {
+    position: relative;
+    float: left;
+    // Bring the "active" button to the front
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      z-index: 2;
+    }
+    &:focus {
+      // Remove focus outline when dropdown JS adds it after closing the menu
+      outline: none;
+    }
+  }
+}
+
+// Prevent double borders when buttons are next to each other
+.btn-group {
+  .btn + .btn,
+  .btn + .btn-group,
+  .btn-group + .btn,
+  .btn-group + .btn-group {
+    margin-left: -1px;
+  }
+}
+
+.navbar-fixed-top {
+    .btn-group {
+        text-align: left;
+        border-left: 1px solid #3f3f44;
+        .btn {
+            border: 0;
+            color: #fff;
+            padding: 0 15px;
+            height: @header-height;
+            line-height: @header-height;
+            vertical-align: middle;
+            background-color: transparent;
+            border-radius: 0;
+            &:hover {
+                background-color:lighten(@header-bg, 10%);
+            }
+        }
+        &.open {
+            background-color:lighten(@header-bg, 10%);
+        }
+    }
+}

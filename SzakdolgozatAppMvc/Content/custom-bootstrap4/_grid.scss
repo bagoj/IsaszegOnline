@@ -1,0 +1,418 @@
+﻿// Custom theme variables and mixins
+
+//
+// Grid system
+// --------------------------------------------------
+
+.container {
+    @include container-fixed();
+
+    @media (min-width: $screen-xl-min) {
+        width: $container-xl;
+    }
+}
+
+@include make-grid(xl);
+
+// tr repeater
+
+.table thead > tr > th {
+    padding: 10px;
+    text-align: center;
+}
+
+// jqGrid -> Bootstrap Table
+
+$grid-border: 1px solid #ddd;
+$grid-background: #fff;
+
+.grid-border {
+    border: $grid-border;
+}
+
+.grid-background {
+    background: #fff;
+}
+
+.grid-font {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+div[id$='_Select'].select2-container {
+    background: $grid-background;
+    border: $grid-border;
+    padding-left: 10px;
+}
+
+.ui-jqgrid {
+    background: transparent;
+
+    &.ui-widget-content {
+        border: none;
+    }
+
+    &.ui-corner-all {
+        border-radius: 0;
+    }
+
+    .ui-jqgrid-hdiv {
+        border: $grid-border;
+    }
+
+    .ui-jqgrid-htable {
+        thead {
+            border-right: $grid-border;
+        }
+
+        th {
+            border: $grid-border;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            background: $grid-background;
+
+            &.ui-th-column {
+                border-top: $grid-border;
+            }
+
+            &.ui-th-ltr {
+                border-left: $grid-border;
+                padding: 1px;
+
+                div {
+                    padding: 0 !important;
+                }
+
+                .ui-search-input {
+                    padding: 0.2em 0.1em !important;
+
+                    > input {
+                        line-height: 1.42857143;
+                        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                        font-size: 14px;
+                        height: 34px;
+                        padding: 6px 12px !important;
+                        border: 1px solid #ccc;
+                        @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075));
+
+                        &::-ms-clear {
+                            display: none;
+                        }
+                    }
+                }
+
+                .clearsearchclass {
+                    display: block;
+                    margin-left: -24px;
+                    padding: 0;
+                    width: 16px;
+                    height: 12px;
+                    color: transparent;
+                    background: url('../css/select2.png') right top no-repeat;
+
+                    &:hover {
+                        background-position: right -11px;
+                    }
+                }
+            }
+
+            div {
+                display: inline;
+            }
+        }
+    }
+
+    .ui-icon-asc {
+        margin-left: 1px;
+    }
+
+    .jqgfirstrow {
+        > td {
+            padding: 0 8px !important;
+        }
+    }
+
+    .ui-jqgrid-bdiv {
+        overflow-x: auto;
+
+        .ui-jqgrid-btable tr {
+            &:nth-child(odd) {
+                td {
+                    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                    font-size: 14px;
+                    background: $grid-background;
+                    width: 150px;
+                }
+            }
+
+            &:nth-child(even) {
+                td {
+                    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                    font-size: 14px;
+                    background: #ededed;
+                    width: 150px;
+                }
+            }
+        }
+    }
+
+    tr:not(.jqgfirstrow).ui-row-ltr:not(.ui-state-hover):not(.ui-state-highlight) td {
+        border: $grid-border !important;
+    }
+
+    .ui-state-highlight td {
+        background: lighten($brand-primary, 17%) !important;
+        border: 1px solid lighten($brand-primary, 2%) !important;
+    }
+
+    .ui-state-hover td {
+        background: lighten($brand-primary, 27%) !important;
+        border: 1px solid lighten($brand-primary, 10%) !important;
+    }
+
+    .ui-jqgrid-pager {
+        background: transparent;
+        height: 0px !important; //NEW_JQGRID
+        //height: 45px !important; //MOD: VF
+        .ui-pg-table {
+            & > tbody > tr > td:last-child {
+                height: 45px;
+
+                & > .ui-pg-table {
+                    height: 34px;
+                    //background: $grid-background;
+                    //border: $grid-border;
+                    //margin-top: 7px;
+                    //margin-right: -1px;
+                }
+            }
+
+            .ui-pg-table {
+                //display: none;
+            }
+
+            .ui-jqgrid-pg-left {
+                display: table-cell !important
+            }
+
+            .ui-jqgrid-pg-right {
+                float: right;
+            }
+        }
+
+        .ui-corner-all {
+            border-radius: 0;
+        }
+    }
+}
+
+.ui-jqgrid-buttons {
+    position: absolute;
+    margin-top: 10px;
+}
+
+.ui-jqgrid-nav {
+    position: relative;
+    margin-top: 10px;
+    float: right;
+
+    button {
+        width: 35px;
+        height: 35px;
+
+        & i:before {
+            position: relative;
+            top: -13px;
+            margin-left: -10px;
+            font-size: 25px;
+        }
+    }
+}
+
+div[id$=_Wrapper] > div:first-child {
+
+    & > div:first-child {
+        background-color: #ccc;
+    }
+
+    div[data-grid-id] {
+        border: 1px solid #ccc;
+
+        h3 {
+            position: absolute;
+            right: 20px;
+            margin-top: 3px;
+
+            i[data-icon="V"] {
+                margin-right: 5px;
+                padding-right: 25px;
+            }
+
+            & + div[id$="Content"] {
+                padding: 0;
+
+                form {
+                    margin-top: 10px;
+
+                    .btn-secondary {
+                        //margin-right: 30px;
+                        //margin-left: -25px;
+                        //margin-bottom: 30px;
+                        & > i[data-icon] {
+                            top: 3px;
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+tr.ui-search-toolbar {
+    border-top-color: #ccc;
+}
+
+// Bootstrap Table
+
+.fixed-table-container {
+    @include border-radius(0);
+}
+
+.pagination {
+    & > li:first-child {
+        & > a, & > span {
+            @include border-left-radius(0);
+        }
+    }
+
+    & > li:last-child {
+        & > a, & > span {
+            @include border-right-radius(0);
+        }
+    }
+}
+
+.table-buttons {
+    float: left;
+    margin: 10px 0;
+}
+
+.fixed-table-pagination {
+    .pagination-detail {
+        //display: none;
+    }
+
+    .pagination {
+        margin: 5px 0;
+    }
+}
+
+.wrapper-head {
+
+    .content-title {
+        margin-top: -30px !important;
+    }
+
+    &.row {
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+}
+
+.ui-jqgrid-hbox {
+    padding-right: 0 !important;
+}
+
+.ui-jqgrid .ui-pager-control .ui-pg-button {
+    display: table-cell !important;
+}
+
+.ui-jqgrid-resize {
+    width: 1.2em !important;
+}
+
+.ui-priority-secondary {
+    opacity: 100 !important;
+}
+
+.ui-jqgrid-bdiv, .ui-jqgrid-jquery-ui:not(.ui-jqdialog), .ui-corner-top, .ui-corner-bottom, .ui-jqgrid-view {
+    width: 100% !important;
+}
+
+.ui-jqgrid table:not(.ui-pg-table) {
+    width: 100% !important;
+}
+
+// searchbox az alapértelmezett js-ui-ra
+// effektíve át kell másolni a bootstrap beállításokat
+
+.ui-jqdialog {
+    font-size: 14px;
+    padding: 0 !important;
+    border: 1px solid rgba(0,0,0,.2) !important;
+
+    .ui-jqdialog-content {
+        padding: 0.6rem;
+    }
+
+    .ui-corner-all {
+        border-radius: 0;
+    }
+
+    .ui-jqdialog-titlebar {
+        padding: 8px;
+        font-size: 16px;
+        background-color: $gray-dark;
+        color: #fff;
+        font-weight: 500;
+
+        .fa {
+            color: #fff;
+        }
+    }
+
+    .operators > .select2-container {
+        min-width: 8em;
+    }
+
+    .input-elm {
+        height: 34px !important;
+    }
+
+    input[type=button] {
+        min-width: 34px;
+    }
+
+    .group {
+        width: 100% !important;
+        //a lenti két sor csoport létrehozáskor fontos, egyébként törlendő
+        border-left: 2px solid $gray-light !important;
+        padding-left: 4px;
+    }
+
+    .opsel {
+        min-width: 5em;
+        width: 10% !important;
+    }
+
+    .add-group, .add-rule {
+        margin-left: 0.5em;
+    }
+
+    a[id$=_search] {
+        background-color: $brand-primary;
+
+        > span {
+            color: #fff;
+        }
+    }
+}
+
+.fa {
+    color: $gray-dark;
+
+    &.ui-resizable-handle {
+        color: $gray-light;
+    }
+}

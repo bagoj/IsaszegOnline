@@ -1,0 +1,39 @@
+﻿// My Toggle Group Buttons
+
+$toggle-item-z-index:500;
+
+.toggle-group {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap !important;
+    display: block;
+
+    .toggle-list-item {
+        position: relative;
+        z-index: $toggle-item-z-index;
+
+        .btn {
+            position: relative;
+            z-index: $toggle-item-z-index+10;
+            text-transform: uppercase;
+        }
+
+        input {
+            position: absolute;
+            opacity: 0;
+            height: $input-height-base;
+            width: 100%;
+            top: 0;
+            margin: 0;
+            padding: 0;
+            z-index: ($toggle-item-z-index)-10;
+        }
+    }
+
+    &.group-horizontal {
+        .toggle-list-item {
+            float: left;
+        }
+    }
+}

@@ -1,0 +1,52 @@
+// Custom theme variables and mixins
+@import url("../variables.less");
+@import url("../mixins.less");
+
+// -------- Login Layout  -----------------
+
+.login-container {
+    position: relative;
+    background-color: #fff;
+    -webkit-box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin-top: 100px;
+    max-width: 800px;
+
+    .login-title {
+        margin-top: 10px;
+        color: @brand-primary;
+    }
+
+    .banner-picture {
+        margin: 0 0 20px 0;
+    }
+
+    .poszeidon-logo {
+        margin: 10px 0 30px;
+    }
+
+    .version-line {
+        height: 70px;
+    }
+
+    .version-number {
+        font-size: small;
+        position: absolute;
+        bottom: 0;
+    }
+
+    .browser-image {
+        height: 14px;
+        width: 14px;
+    }
+
+    label {
+        line-height: 34px;
+    }
+
+    .input-group {
+        margin-bottom: 7px;
+    }
+}

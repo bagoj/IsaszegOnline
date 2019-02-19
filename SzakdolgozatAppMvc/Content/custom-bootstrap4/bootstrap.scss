@@ -1,0 +1,53 @@
+﻿// Override the Twitter Bootstrap Less files with custom themenavbar-fixed-botto
+
+@import "../bootstrap-4/bootstrap.scss";
+
+/* Custom theme variables and mixins */
+@import "variables";
+@import "utilities";
+@import "mixins";
+
+@import "custom-elements/grid-framework";
+@import "type";
+/*NEW_JQGRID delete*/
+@import "grid";
+
+@import "custom-elements/layout";
+@import "custom-elements/login-layout";
+
+// Components
+@import "dropdown";
+@import "buttons";
+@import "forms";
+@import "nav";
+@import "button-group";
+@import "input-group";
+
+// Custom components
+@import "custom-elements/sidebar";
+@import "custom-elements/plugins";
+@import "custom-elements/bootstrap-switch";
+@import "custom-elements/checkbox-radio-switch";
+@import "custom-elements/toggle-group-buttons";
+@import "custom-elements/fileinput";
+/*NEW_JQGRID delete*/
+@import "custom-elements/jq-grid";
+@import "custom-elements/jq-ui-datepicker";
+@import "custom-elements/poszeidon-icons";
+@import "custom-elements/validation";
+@import "custom-elements/bootstrap-datetimepicker";
+@import "custom-elements/bootstrap-touchspin";
+@import "custom-elements/error";
+@import "custom-elements/treeMaker";
+@import "custom-elements/select2";
+
+// Components JavaScript
+@import "modal";
+
+// Utility classes
+@import "custom-elements/responsive-elements";
+@import "custom-elements/callouts";
+
+// Test layout styles
+@import "custom-elements/test";
+@import "theme";

@@ -1,6 +1,6 @@
 /*!
- * Bootstrap v3.3.7 (http://getbootstrap.com)
- * Copyright 2011-2016 Twitter, Inc.
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -43,7 +43,7 @@ template {
   display: none;
 }
 a {
-  background-color: blue;
+  background-color: transparent;
 }
 a:active,
 a:hover {
@@ -181,7 +181,7 @@ optgroup {
 }
 table {
   border-spacing: 0;
-  border-collapse: collapse;
+  /*border-collapse: collapse;*/
 }
 td,
 th {
@@ -1085,8 +1085,8 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #fff;
-  background-color: #09f;
+  color: #333;
+  background-color: #fff;
 }
 input,
 button,
@@ -1097,15 +1097,16 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #007a00;
+  color: #337ab7;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #33ff30;
+  color: #23527c;
   text-decoration: underline;
 }
 a:focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -2536,6 +2537,7 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3027,6 +3029,7 @@ select[multiple].input-lg {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -4960,7 +4963,7 @@ a.badge:focus {
   padding-bottom: 30px;
   margin-bottom: 30px;
   color: inherit;
-  background-color: #337ab7;
+  background-color: #eee;
 }
 .jumbotron h1,
 .jumbotron .h1 {
@@ -5984,6 +5987,9 @@ button.close {
 @media (min-width: 992px) {
   .modal-lg {
     width: 900px;
+  }
+  .modal-grid {
+    width: 95%;
   }
 }
 .tooltip {

@@ -1,0 +1,71 @@
+// Custom theme variables and mixins
+@import "variables.less";
+@import "mixins.less";
+
+.modal-dialog {
+    margin-top: 60px;
+}
+
+.modal-lg {
+    width: 900px;
+}
+
+.modal-form.modal-dialog {
+    width: 80%;
+
+    .modal-content {
+        max-height: 80vh;
+
+        .modal-header {
+            height: 10vh;
+        }
+
+        .modal-footer {
+            height: 10vh;
+        }
+
+        .modal-body {
+            overflow-y: auto;
+            display: block;
+        }
+    }
+}
+
+.modal-grid {
+    width: 95%;
+}
+
+.modal-header {
+    background-color: @gray-dark;
+
+    .close {
+        margin-top: 0;
+        color: #fff;
+        opacity: 0.9;
+        text-shadow: none;
+
+        &:hover {
+            opacity: 1;
+            text-shadow: 0 1px 1px #fff;
+        }
+    }
+}
+
+.modal-title {
+    padding: 0 0 0 5px;
+    color: #fff;
+}
+
+.modal-footer {
+    border-top: 0;
+}
+
+// Actual modal
+.modal-content {
+    border-radius: 0;
+}
+
+.modal-body {
+    max-height: 60vh;
+    overflow-y: auto;
+}

@@ -1,0 +1,57 @@
+﻿//Ez a stíluslap jQuery UI 1.12.1 saját datepicker-ét írja felül
+//A datepicker a jqGrid-be kell, mivel az jq-ui alapkon készült el, így a Bootstrap DaterTimePicker szétesik benne
+//FZS 2019. 01. 17.
+
+
+
+.ui-datepicker {
+
+    .ui-datepicker-header > a {
+        margin-top: 6px;
+    }
+
+    table {
+        padding: 0.3rem;
+
+        a {
+            text-align: center;
+            border-radius: 0;
+        }
+
+        tbody td {
+            height: 20px;
+            line-height: 20px;
+            width: 20px;
+        }
+    }
+
+    .ui-widget-header, .ui-state-default {
+        border: none;
+        background: none;
+    }
+    //Glyphicon csere
+    .ui-icon {
+        position: relative !important;
+        top: 1px !important;
+        display: inline-block !important;
+        font-family: 'Glyphicons Halflings' !important;
+        font-style: normal !important;
+        font-weight: normal !important;
+        line-height: 1 !important;
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale !important;
+        text-indent: 0 !important;
+    }
+
+    .ui-icon-circle-triangle-w {
+        &:before {
+            content: "\e079" !important;
+        }
+    }
+
+    .ui-icon-circle-triangle-e {
+        &:before {
+            content: "\e080" !important;
+        }
+    }
+}

@@ -1,0 +1,172 @@
+﻿// Custom theme variables and mixins
+
+// Buttons
+// --------------------------------------------------
+
+//TODO: mixinek deklarálása
+// Base styles
+// --------------------------------------------------
+
+.btn {
+    @include button-size( $padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
+    @include user-select(none);
+    text-shadow: none;
+    background-image: none;
+    @include box-shadow(none);
+
+    &:not(.bootstrap-touchspin-up):not(.bootstrap-touchspin-down):not(.functionButtonVisible) {
+        height: $input-height-base;
+    }
+
+    &,
+    &:active,
+    &.active {
+        &:focus {
+            @include tab-focus();
+        }
+    }
+
+    &:hover,
+    &:focus {
+        color: $btn-default-color;
+        text-decoration: none;
+    }
+
+    &:active,
+    &.active {
+        outline: 0;
+        background-image: none;
+        @include box-shadow(inset 0 3px 5px rgba($black,.125));
+    }
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] {
+        cursor: not-allowed;
+        pointer-events: none; // Future-proof disabling of clicks
+        @include opacity(.65);
+        @include box-shadow(none);
+    }
+}
+
+// Alternate buttons
+// --------------------------------------------------
+
+.btn-secondary {
+    @include button-variant($btn-default-bg, $btn-default-border);
+    color: $btn-default-color;
+}
+
+.btn-primary {
+    @include button-variant($btn-primary-bg, $btn-primary-border);
+    color: $btn-primary-color;
+}
+// Success appears as green
+.btn-success {
+    @include button-variant($btn-success-bg, $btn-success-border);
+    color: $btn-success-color;
+}
+// Info appears as blue-green
+.btn-info {
+    @include button-variant($btn-info-bg, $btn-info-border);
+    color: $btn-info-color;
+}
+// Warning appears as orange
+.btn-warning {
+    @include button-variant($btn-warning-bg, $btn-warning-border);
+    color: $btn-warning-color;
+}
+// Danger and error appear as red
+.btn-danger {
+    @include button-variant($btn-danger-bg, $btn-danger-border);
+    color: $btn-danger-color;
+}
+
+// Button Sizes
+// --------------------------------------------------
+
+.btn-lg {
+    // line-height: ensure even-numbered height of button next to large input
+    @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $border-radius-large );
+}
+
+.btn-sm {
+    // line-height: ensure proper height of button next to small input
+    @include button-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $border-radius-small );
+}
+
+.btn-xs {
+    @include button-size($padding-xs-vertical, $padding-xs-horizontal, $font-size-small, $line-height-small, $border-radius-small );
+}
+
+.btn-primary.disabled {
+    background-color: lighten($brand-primary, 5%);
+    background-image: none;
+
+    &:active,
+    &:focus,
+    &:hover {
+        background-color: lighten($brand-primary, 5%);
+        background-image: none;
+    }
+}
+
+.btn-primary.disabled.active {
+    background-color: lighten($brand-primary, 5%);
+    background-image: none;
+}
+
+.btn-primary.disabled.focus {
+    background-color: lighten($brand-primary, 5%);
+    background-image: none;
+}
+
+.btn-primary[disabled] {
+    background-color: lighten($brand-primary, 5%);
+    background-image: none;
+
+    &:active,
+    &:focus,
+    &:hover {
+        background-color: lighten($brand-primary, 5%);
+        background-image: none;
+    }
+}
+
+.btn-primary[disabled].active {
+    background-color: lighten($brand-primary, 5%);
+    background-image: none;
+}
+
+.btn-primary[disabled].focus {
+    background-color: lighten($brand-primary, 5%);
+    background-image: none;
+}
+
+fieldset[disabled] {
+    .btn-primary {
+        background-color: lighten($brand-primary, 5%);
+        background-image: none;
+
+        &:active,
+        &:focus,
+        &:hover {
+            background-color: lighten($brand-primary, 5%);
+            background-image: none;
+        }
+    }
+
+    .btn-primary.active {
+        background-color: lighten($brand-primary, 5%);
+        background-image: none;
+    }
+
+    .btn-primary.focus {
+        background-color: lighten($brand-primary, 5%);
+        background-image: none;
+    }
+}
+
+.move-up-btn, .move-down-btn {
+    height: 50% !important;
+}

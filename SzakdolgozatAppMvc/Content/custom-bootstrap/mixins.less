@@ -1,0 +1,18 @@
+//
+// Mixins
+// --------------------------------------------------
+@import url("../bootstrap/mixins.less");
+@import url("../bootstrap/variables.less");
+
+// Changes and addons
+// -------------------------
+
+.border-radius(@radius) {
+    .border-right-radius(@radius);
+    .border-left-radius(@radius);
+}
+
+.text-shadow(@params: 0 0 1px @gray-dark) {
+    -webkit-text-shadow: @params;
+    text-shadow: @params;
+}

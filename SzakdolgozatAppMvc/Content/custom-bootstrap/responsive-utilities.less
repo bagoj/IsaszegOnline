@@ -1,0 +1,39 @@
+// Custom theme variables and mixins
+
+@import "variables.less";
+@import "mixins.less";
+
+//
+// Responsive: Utility classes
+// --------------------------------------------------
+
+// Visibility utilities
+
+.visible-xl {
+    .responsive-invisibility();
+}
+
+.visible-lg {
+    @media (min-width: @screen-lg-min) and (max-width: @screen-lg-max) {
+        .responsive-visibility();
+    }
+}
+
+.visible-xl {
+    @media (min-width: @screen-xl-min) {
+        .responsive-visibility();
+    }
+}
+
+
+.hidden-lg {
+    @media (min-width: @screen-lg-min) and (max-width: @screen-lg-max) {
+        .responsive-invisibility();
+    }
+}
+
+.hidden-xl {
+    @media (min-width: @screen-xl-min) {
+        .responsive-invisibility();
+    }
+}

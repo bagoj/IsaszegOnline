@@ -1,0 +1,49 @@
+// Custom theme variables and mixins
+@import url("../variables.less");
+@import url("../mixins.less");
+
+
+// MVC required styles
+// -------------------------
+
+.kotelezo,
+.kotelezo .select2-container,
+.required-input,
+input[data-val-sdarequired],
+textarea[data-val-sdarequired],
+select[data-val-sdarequired] {
+    background-color: #ffece0;
+}
+
+
+// MVC error validation styles
+// -------------------------
+.input-validation-error {
+  border: 1px solid #e10000;
+  background-color: #f5e1e1 !important; }
+
+.field-validation-error {
+    color: #e10000;
+    padding-left: 20px;
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 0.9em;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFXSURBVDhPtZK9SgNBEIB3Dg9SSLSwS5EidyFCCn+wPgQFizyEhcWV9hYqaQSLlD6Aj2ArSHrjCSmvCuQOCwuRVIlmnNmbi7fsJdj4wTI/uzM7O7PqX4k87/bF9+/FLAVEWjw3my1nPh8qgDUyj/fi+DHbMXFEWjiIPQlmek9BkOsGpQkGjcYJCV457WqSnIluYD2Bb9pIEi69hUpds48OXSrEd5jN/N3R6EMfFKwKqmkacjDr+3F8xUtvAGwp173QegEjQVSvb5LoZpYNVXROz/PE1BgJ0HW7VC4nKYeaCo7TE0uzSMBjIxFm1ko69DeORP9tIjkfSHQyK8NoYgFEfP2s1Q4O+/0vXYFkNIIZCgx4ibkAAHbWx+NTreuxpWlEepsdRej36QrpAirG4g2m020YeF5IGe/EabDsCTm0fwOUfUi6dftfoF5MQM++Ulk+uhV8I05+AH/TXwcFaPAEAAAAAElFTkSuQmCC");
+    background-position: left center;
+    background-repeat: no-repeat;
+    span {
+    }
+}
+
+.validation-summary-errors {
+  background-color: #fff3f3;
+  background-image: url(Images/alert_Icon_Summary.png);
+  background-position: 12px 10px;
+  background-repeat: no-repeat;
+  color: #e10000;
+  padding: 10px 10px 10px 65px;
+  min-height: 40px;
+  margin: 20px auto;
+  max-width: 500px;
+  text-align: left;
+  border: 1px dotted #e10000; }

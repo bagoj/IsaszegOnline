@@ -1,0 +1,268 @@
+﻿// Custom theme variables and mixins
+
+// Custom Tab Panel (Fancy Chooser)
+// -------------------------
+
+.card {
+    border-radius: 0;
+}
+
+.tab-card {
+    border-radius: 6px;
+
+    .tab-card-group {
+        display: inline-block;
+        background: #e9e9e9;
+        margin: 5px 0 5px 0;
+
+        &:last-child {
+            border: 0;
+
+            .nav-tabs {
+                border-right: none;
+            }
+        }
+    }
+
+    .tab-card-group-title {
+        color: $text-color;
+    }
+
+    .nav-tabs {
+        border: none;
+        margin: 15px 0 10px 5px;
+        border-right: 2px solid $gray-dark;
+        padding-right: 10px;
+
+        li {
+            margin: 0 5px;
+
+            &.active {
+                .btn {
+                    color: #fff;
+                    background: $brand-primary;
+                    @include box-shadow(0 0 3px darken($brand-primary, 10%));
+                    @include text-shadow;
+
+                    &:hover {
+                    }
+                }
+            }
+
+            input[type=radio].form-control[disabled] {
+                opacity: 0;
+            }
+        }
+
+        .btn label {
+            display: table-cell;
+            height: 2.5em;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        .btn {
+            height: auto !important;
+        }
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 10px 12px;
+        background: transparent;
+        border-radius: 3px;
+
+        .glyphicon, img {
+            display: block;
+            margin: 10px auto;
+        }
+
+        &:hover {
+            background: lighten($gray-light, 30%);
+            color: $text-color;
+            @include box-shadow(none);
+        }
+    }
+}
+
+.dropdown-menu {
+    padding: 0;
+
+    li {
+        a {
+            line-height: 2em;
+
+            &:hover {
+                color: $text-color;
+            }
+        }
+    }
+}
+
+
+
+.nav {
+    margin-bottom: 0;
+    padding-left: 0; // Override default ul/ol
+    list-style: none;
+
+    @extend .clearfix;
+
+    > li {
+        position: relative;
+        display: block;
+
+        > a {
+            position: relative;
+            display: block;
+            padding: $nav-link-padding;
+
+            &:hover,
+            &:focus {
+                text-decoration: none;
+                background-color: $gray;
+            }
+        }
+        // Disabled state sets text to gray and nukes hover/tab effects
+        &.disabled > a {
+            color: $nav-disabled-link-color;
+
+            &:hover,
+            &:focus {
+                color: $nav-disabled-link-hover-color;
+                text-decoration: none;
+                background-color: transparent;
+                cursor: $cursor-disabled;
+            }
+        }
+    }
+}
+
+// Give the tabs something to sit on
+.nav-tabs {
+    border-bottom: 2px solid $brand-primary;
+    padding-bottom: 1px;
+
+    > li {
+        float: left;
+        // Make the list-items overlay the bottom border
+        margin-bottom: -1px;
+        // Actual tabs (as links)
+        > a {
+            margin-right: 2px;
+            line-height: $line-height-base;
+            border: 1px solid transparent;
+            border-radius: 3px 3px 0 0;
+            color: #fff;
+            background-color: $gray;
+
+            &:hover {
+                border: 1px solid $gray-light;
+                background-color: $gray-light;
+            }
+
+            &.error {
+                background-color: #e10000 !important;
+                border: 1px solid #e10000 !important;
+            }
+        }
+        // Active state, and its :hover to override normal :hover
+        /*&.active > a {
+            &,
+            &:hover,
+            &:focus {
+                color: $nav-tabs-active-link-hover-color;
+                background-color: $nav-tabs-active-link-hover-bg;
+                border: 1px solid $nav-tabs-active-link-hover-border-color;
+                border-bottom-color: transparent;
+                cursor: default;
+                @include text-shadow;
+            }
+        }*/
+    }
+}
+
+.nav-item > .nav-link {
+    margin-right: 2px;
+    line-height: $line-height-base;
+    border: 1px solid transparent;
+    border-radius: 3px 3px 0 0;
+    color: #fff;
+    background-color: $gray;
+
+    &:hover {
+        border: 1px solid $gray-light;
+        background-color: $gray-light;
+    }
+
+    &.error {
+        background-color: #e10000 !important;
+        border: 1px solid #e10000 !important;
+    }
+
+    &.notify {
+        background-color: #d15e5e !important;
+        border: 1px solid #d15e5e !important;
+    }
+
+    &.active {
+        color: #fff;
+        background-color: lighten($brand-primary, 5%) !important;
+        border-color: $brand-primary !important;
+        @include box-shadow(0 0 3px darken($brand-primary, 10%));
+        @include text-shadow;
+
+        &:hover,
+        &:focus {
+            color: $nav-tabs-active-link-hover-color;
+            background-color: $nav-tabs-active-link-hover-bg;
+            border: 1px solid $nav-tabs-active-link-hover-border-color;
+            border-bottom-color: transparent;
+            cursor: default;
+            @include text-shadow;
+        }
+    }
+}
+
+[id$=_Wrapper] > div > div:first-child {
+    padding: 0;
+
+    .nav-tabs {
+        padding-bottom: 0;
+
+        > li > a {
+            padding: 6px 12px;
+        }
+    }
+}
+
+.sidebar-nav .list-group .menu-item {
+    a {
+        text-transform: none;
+        padding-left: 65px;
+        text-indent: -65px;
+        line-height: 0;
+        text-shadow: 0 0 1px black;
+
+        &:focus, &.active {
+            text-shadow: none;
+        }
+
+        i:before {
+            margin-left: 65px;
+        }
+    }
+
+    .level-2,
+    .level-3 {
+        margin-left: 20px;
+    }
+}
+
+#functionButtonMenuRow {
+    display: flex !important;
+}
+
+.tab-content {
+    padding-bottom: 3em;
+}

@@ -1,0 +1,293 @@
+// Custom theme variables and mixins
+@import "variables.less";
+@import "mixins.less";
+
+//
+// Grid system
+// --------------------------------------------------
+
+.container {
+  .container-fixed();
+  @media (min-width: @screen-xl-min) {
+    width: @container-xl;
+  }
+}
+
+.make-grid(xl);
+
+// tr repeater
+
+.table thead > tr > th {
+    padding: 10px;
+    text-align: center;
+}
+
+// jqGrid -> Bootstrap Table
+
+@grid-border: 1px solid #ddd;
+
+.grid-border {
+    border: @grid-border;
+}
+
+.grid-background {
+    background: #fff;
+}
+
+.grid-font {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+div[id$='_Select'].select2-container {
+    .grid-background;
+    .grid-border;
+    padding-left: 10px;
+}
+
+.ui-jqgrid {
+    background: transparent;
+
+    &.ui-widget-content {
+        border: none;
+    }
+
+    &.ui-corner-all {
+        border-radius: 0;
+    }
+
+    .ui-jqgrid-hdiv {
+        .grid-border;
+    }
+
+    .ui-jqgrid-htable {
+        thead {
+            border-right: @grid-border;
+        }
+
+        th {
+            .grid-border;
+            .grid-font;
+            .grid-background;
+
+            &.ui-th-column {
+                border-top: @grid-border;
+            }
+
+            &.ui-th-ltr {
+                border-left: @grid-border;
+                padding: 1px;
+
+                div {
+                    padding: 0 !important;
+                }
+
+                .ui-search-input input {
+                    line-height: 1.42857143;
+                    .grid-font;
+                    height: 34px;
+                    padding: 6px 12px !important;
+                    border: 1px solid #ccc;
+                    .box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075));
+
+                    &::-ms-clear {
+                        display: none;
+                    }
+                }
+
+                .clearsearchclass {
+                    display: block;
+                    margin-left: -24px;
+                    padding: 0;
+                    width: 16px;
+                    height: 12px;
+                    color: transparent;
+                    background: url('../css/select2.png') right top no-repeat;
+
+                    &:hover {
+                        background-position: right -11px;
+                    }
+                }
+            }
+
+            div {
+                display: inline;
+            }
+        }
+    }
+
+    .ui-icon-asc {
+        margin-left: 1px;
+    }
+
+    .jqgfirstrow {
+        display: none;
+    }
+
+    .ui-jqgrid-bdiv {
+        overflow: visible;
+
+        .ui-jqgrid-btable tr {
+            &:nth-child(odd) {
+                td {
+                    .grid-font;
+                    .grid-background;
+                    width: 150px;
+                }
+            }
+
+            &:nth-child(even) {
+                td {
+                    .grid-font;
+                    background: #ededed;
+                    width: 150px;
+                }
+            }
+        }
+    }
+
+    tr.ui-row-ltr td {
+        .grid-border;
+    }
+
+    .ui-state-highlight td {
+        background: lighten(@brand-primary, 25%) !important;
+        border: 1px solid #ea6c18 !important;
+    }
+
+    .ui-state-hover td {
+        background: lighten(@brand-primary, 34%) !important;
+        border: 1px solid #b45210 !important;
+    }
+
+    .ui-jqgrid-pager {
+        background: transparent;
+        height: 45px !important;
+
+        .ui-pg-table {
+            & > tbody > tr > td:last-child {
+                height: 45px;
+
+                & > .ui-pg-table {
+                    height: 34px;
+                    .grid-background;
+                    .grid-border;
+                    margin-top: 7px;
+                    margin-right: -1px;
+                }
+            }
+
+            .ui-pg-table {
+                display: none;
+            }
+        }
+
+        .ui-corner-all {
+            border-radius: 0;
+        }
+    }
+}
+
+.ui-jqgrid-buttons {
+    position: absolute;
+    margin-top: -35px;
+}
+
+.ui-jqgrid-nav {
+    position: relative;
+    margin-top: -35px;
+    float: right;
+
+    button {
+        width: 35px;
+        height: 35px;
+
+        & i:before {
+            position: relative;
+            top: -13px;
+            margin-left: -10px;
+            font-size: 25px;
+        }
+    }
+}
+
+div[id$=_Wrapper] > div:first-child {
+
+    & > div:first-child {
+        background-color: #ccc;
+    }
+
+    div[data-grid-id] {
+        border: 1px solid #ccc;
+        margin-bottom: -41px;
+
+        h3 {
+            position: absolute;
+            right: 20px;
+            margin-top: 3px;
+
+            i[data-icon="V"] {
+                margin-right: 5px;
+                padding-right: 25px;
+            }
+
+            & + div[id$="Content"] {
+                padding: 0;
+
+                form {
+                    margin-top: 10px;
+
+                    .btn-default {
+                        //margin-right: 30px;
+                        //margin-left: -25px;
+                        //margin-bottom: 30px;
+
+                        & > i[data-icon] {
+                            top: 3px;
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+tr.ui-search-toolbar {
+    border-top-color: #ccc;
+}
+
+// Bootstrap Table
+
+.fixed-table-container {
+    .border-radius(0);
+}
+
+.pagination {
+    & > li:first-child {
+        & > a, & > span {
+            .border-left-radius(0);
+        }
+    }
+
+    & > li:last-child {
+        & > a, & > span {
+            .border-right-radius(0);
+        }
+    }
+}
+
+.table-buttons {
+    float: left;
+    margin: 10px 0;
+}
+
+.fixed-table-pagination {
+    .pagination-detail {
+        display: none;
+    }
+
+    .pagination {
+        margin: 5px 0;
+    }
+}

@@ -1,0 +1,89 @@
+﻿// Custom theme variables and mixins
+// Reset List item group styles
+
+$sidebar-nav-img-size:30px;
+$sidebar-nav-img-padding:15px;
+
+.sidebar-nav, .sidebar-nav-sub {
+    .list-group-item {
+        border-radius: 0;
+        color: #fff;
+        background-color: transparent;
+        border: 0;
+        padding: 10px 0;
+        text-transform: uppercase;
+    }
+}
+
+.sidebar-nav {
+    z-index: $zindex-sidebar;
+
+    .list-group-item {
+        img {
+            margin: 0 ($sidebar-nav-img-padding + 5px) 0 $sidebar-nav-img-padding;
+        }
+
+        &:hover {
+            background-color: darken($sidebar-sub-menu-bg, 5%);
+            color: #fff;
+        }
+
+        &.active {
+            background-color: $body-bg;
+            background-image: none;
+            color: #333;
+            text-shadow: none;
+
+            &:hover {
+                background-color: $sidebar-sub-menu-bg;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.sidebar-nav-sub {
+    display: none;
+    z-index: $zindex-sidebar-sub;
+    top: 0;
+    left: $sidebar-nav-img-size + ($sidebar-nav-img-padding * 2);
+    background-color: $sidebar-sub-menu-bg;
+
+    &.active {
+        display: block;
+    }
+
+    .back-navigation {
+        background-color: darken($sidebar-sub-menu-bg, 10%);
+        padding: $sidebar-nav-img-padding 0;
+        cursor: pointer;
+
+        &:hover {
+            background-color: darken($sidebar-sub-menu-bg, 5%);
+        }
+    }
+
+    .link-header {
+        background-color: darken($sidebar-sub-menu-bg, 10%);
+        padding: $sidebar-nav-img-padding 0;
+
+        .sub-nav-title {
+            color: #fff;
+            font-size: $font-size-large;
+            text-transform: uppercase;
+            margin: 0;
+        }
+    }
+
+    .list-group-item {
+        padding: $sidebar-nav-img-padding;
+
+        &:hover {
+            background-color: darken($sidebar-sub-menu-bg, 5%);
+        }
+
+        &.active {
+            background-color: lighten($sidebar-sub-menu-bg, 5%);
+        }
+    }
+}
