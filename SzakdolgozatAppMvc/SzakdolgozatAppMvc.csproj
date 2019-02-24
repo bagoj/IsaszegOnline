@@ -521,8 +521,6 @@
     <Content Include="Content\custom-bootstrap4\bootstrap.min.css" />
     <Content Include="Content\custom-bootstrap\bootstrap.css" />
     <Content Include="Content\custom-bootstrap\bootstrap.min.css" />
-    <Content Include="Content\Gridmvc.css" />
-    <Content Include="Content\poszeidon-icons.css" />
     <Content Include="Content\Theme\base\accordion.css" />
     <Content Include="Content\Theme\base\all.css" />
     <Content Include="Content\Theme\base\autocomplete.css" />
@@ -546,11 +544,9 @@
     <Content Include="Content\Theme\jquery-ui.css" />
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />
-    <Content Include="Content\ui.jqgrid.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">

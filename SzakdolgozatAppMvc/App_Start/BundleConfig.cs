@@ -31,12 +31,21 @@ namespace SzakdolgozatAppMvc
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
-
-            bundles.Add(new StyleBundle("~/Content/gridcss").Include(
-                      "~/Content/Theme/jquery-ui.css",
-                      "~/Content/ui.jqgrid.css"));
+                "~/Content/Theme/base/core.css",
+                "~/Content/Theme/base/resizable.css",
+                "~/Content/Theme/base/selectable.css",
+                "~/Content/Theme/base/accordion.css",
+                "~/Content/Theme/base/autocomplete.css",
+                "~/Content/Theme/base/button.css",
+                "~/Content/Theme/base/dialog.css",
+                "~/Content/Theme/base/slider.css",
+                "~/Content/Theme/base/tabs.css",
+                "~/Content/Theme/base/datepicker.css",
+                "~/Content/Theme/base/progressbar.css",
+                "~/Content/custom-bootstrap4/bootstrap.css",
+                "~/Content/bootstrap-table.css",
+                "~/Content/toastr.css"
+                ));
         }
     }
 }
