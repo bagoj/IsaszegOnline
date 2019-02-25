@@ -14,112 +14,67 @@
                 <nav class="navbar navbar-fixed-top">
                     <div class="container-fluid">
                         <div class="btn-group float-right">
-                            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" onclick="Action('Home','Index')">
-                                Csapat
-                            </button>
-                            <ul class="dropdown-menu" role="menu">
-                                <li class="dropdown-item" draggable="false" href="/Developer/Profil/Edit">Profilom</li>
-                                <li class="dropdown-item" draggable="false" href="/Developer/Profil/Szerepkoratadas">Szerepkörátadás</li>
-                                <li class="dropdown-item" draggable="false" href="/Developer/Profil/PasswordChange">Jelszó módosítása</li>
-                                <li class="dropdown-item" draggable="false" href="/Developer/Profil/NewsLetter">Hírlevelek</li>
-                                <li class="dropdown-item" draggable="false" href="/Developer/EgyenCsoport">Egyéncsoportok</li>
-                                <li class="dropdown-item" target="_blank" href="https://account.nexiuslearning.com/">E-learning</li>
-                                <li class="dropdown-item" target="_blank" href="http://unnecessaryknowledge.com/">Gyakori kérdések és válaszok</li>
-                                <li class="divider"></li>
-                                <li class="dropdown-item" onclick="formAuthTimeOut()">Kijelentkezés</li>
-                            </ul>
+                            <a class="dropdown-item" href="/Home/Login" draggable="false" ondragstart="return false;">
+                                <i data-icon="v"></i>Bejelentkezés
+                            </a>
                         </div>
-                        <form action="/Developer/Profil/ChangeOrganization" autocomplete="off" class="form-inline float-right utilityform" id="organiztaionSelect" method="post">
-                            <input name="__RequestVerificationToken" type="hidden" value="4oTiM3YWk4cqr6sevG4UyxiuBfRg0zvpSI73AFvSQA9YmUQqU4lchSCwCm8vITyaThO6U5uKo38Ms5zRsIRZAVLY8o-8yB63oLNmpw8ymDG8WSMOniQxQubo2A9o6GJo0">                    <div class="btn-group">
-                                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
-                                    <span>
-                                        <i data-icon="E"></i>
-                                        Tesztelői szervezet
-                                    </span>
-                                    <span class="caret"></span>
-                                </button>
-                                <input id="currentOrganizationId" name="orgId" type="hidden" value="149678074">
-                                <input id="currentRoleOfOrgId" name="roleId" type="hidden" value="166102100">
-                                <input id="empRoleInOrgId2" name="empRoleInOrgId" type="hidden">
-                                <ul class="dropdown-menu scrollable-menu" role="menu">
-                                    <a class="dropdown-item" onclick="changeOrganization(146248992)"> 123</a>
-                                    <a class="dropdown-item" onclick="changeOrganization(178026641)"> Hivatali kapu szervezet</a>
-                                    <a class="dropdown-item" onclick="changeOrganization(10000006)"> Minta Szervezeti Egység</a>
-                                    <a class="dropdown-item" onclick="changeOrganization(183230933)"> SOAP</a>
-                                    <a class="dropdown-item" onclick="changeOrganization(149678074)"> Tesztelői szervezet</a>
-                                    <a class="dropdown-item" onclick="changeOrganization(165108854)"> Tesztelői szervezet 3</a>
-                                </ul>
-                            </div>
-                        </form>        <form action="/Developer/Profil/ChangeRole" autocomplete="off" class="form-inline float-right utilityform" id="roleSelect" method="post">
-                            <input name="__RequestVerificationToken" type="hidden" value="Znb4p70lU8Gc1E0K-kJX0dPf14wF58N-kVGfAOaQk-uBix2xZsgCBu3BHJM3bCAfnFBSJGsnHdn3u3hHFbpwlm_FxMc5GUeH0yM5WTkPOdQf37JPZAcmeedsfxCXgNVX0">                <div class="btn-group">
-                                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
-                                    <span>
-                                        <i data-icon="D"></i>
-                                        Fejlesztő
-                                    </span>
-                                    <span class="caret"></span>
-                                </button>
-                                <input id="currentUserId" type="hidden" value="10000004">
-                                <input id="currentRoleId" name="roleId" type="hidden" value="166102100">
-                                <input id="empRoleInOrgId" name="empRoleInOrgId" type="hidden">
-                                <ul class="dropdown-menu" role="menu">
-                                    <a class="dropdown-item" onclick="changeRole(165962843)">Adatgazda</a>
-                                    <a class="dropdown-item" onclick="changeRole(218825813)">Érkeztető és postázó</a>
-                                    <a class="dropdown-item" onclick="changeRole(166102100)">Fejlesztő</a>
-                                    <a class="dropdown-item" onclick="changeRole(165962844)">Iktató</a>
-                                    <a class="dropdown-item" onclick="changeRole(448310034)">Kapcsolattartó</a>
-                                    <a class="dropdown-item" onclick="changeRole(448155726)">Utazásszervezés</a>
-                                    <a class="dropdown-item" onclick="changeRole(448155725)">Utazó</a>
-                                    <a class="dropdown-item" onclick="changeRole(165962845)">Ügyintéző</a>
-                                    <a class="dropdown-item" onclick="changeRole(165962846)">Vezető</a>
-                                    <a class="dropdown-item" onclick="changeRole(447368666)">Vezető</a>
-                                </ul>
-                            </div>
-                        </form>
                     </div>
                 </nav>
                 @*@Html.Partial("_HeaderPartial")*@
             </div>
         </div>
     </header>
-    @*<div class="container">
-           <div class="navbar-collapse collapse float-left">
-               <div class="navbar-header">
-                   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                       <span class="icon-bar"></span>
-                       <span class="icon-bar"></span>
-                       <span class="icon-bar"></span>
-                   </button>
-                   @Html.ActionLink("Isaszegi SE", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-               </div>
-
-               <ul class="nav navbar-nav">
-                   <li>@Html.ActionLink("Csapat", "Index", "Home")</li>
-                   <li>@Html.ActionLink("About", "About", "Home")</li>
-                   <li class="dropdown">
-                       <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                           Játékosok
-                           <span class="caret"></span>
-                       </a>
-                       <ul class="dropdown-menu" role="menu">
-                           <li>@Html.ActionLink("Felnőtt", "FelnottIndex", "Player")</li>
-                           <li>@Html.ActionLink("U19", "IfjusagiIndex", "Player")</li>
-                           <li>@Html.ActionLink("Női", "NoiIndex", "Player")</li>
-                       </ul>
-                   </li>
-                   <li>@Html.ActionLink("Kapcsolat", "Contact", "Home")</li>
-                   <li>@Html.ActionLink("Felhasználók", "Index", "Player")</li>
-                   <li id="loginMenu">@Html.ActionLink("Bejelentkezés", "Login", "Home")</li>
-                   <li class="hide" id="logoutMenu">@Html.ActionLink("Kijelentkezés","Logout","Home")</li>
-               </ul>
-           </div>
-        </div>*@
     <section class="content-wrapper row">
-    <section class="content col-md-8 offset-md-4 col-lg-9 offset-lg-3 col-xl-10 offset-xl-2">
+        <aside class="sidebar-wrapper col-md-4 col-lg-3 col-xl-2">
+            <nav class="sidebar-nav">
+                <div class="list-group">
+                    <div class="menu-item" id="Altalanos_Infok">
+                        <a class="list-group-item" href="/Home/Index" draggable="false" ondragstart="return false;">
+                            <i data-icon="v"></i>Általános bemutatás
+                        </a>
+                    </div>
+                    <div class="menu-item" id="Kapcsolatok_Menu">
+                        <a class="list-group-item" href="/Home/Contact" draggable="false" ondragstart="return false;">
+                            <i data-icon="v"></i>Kapcsolat
+                        </a>
+                    </div>
+                    <div class="menu-item" id="Csapat_Menu">
+                        <a class="list-group-item" data-toggle="collapse" href="#Csapat" draggable="false" ondragstart="return false;">
+                            <i data-icon="γ"></i>Csapatok
+                        </a>
+                        <div class="collapse panel-collapse" id="Csapat">
+                            <div class="level-2 menu-item" id="Noi_Index_Menu">
+                                <a class="list-group-item" href="/Player/NoiIndex" draggable="false" ondragstart="return false;">
+                                    <i data-icon="δ"></i>Női csapat
+                                </a>
+                            </div>
+                            <div class="level-2 menu-item" id="Ifjusagi_Index_Menu">
+                                <a class="list-group-item" href="/Player/IfjusagiIndex" draggable="false" ondragstart="return false;">
+                                    <i data-icon="ε"></i>Ifjúsági csapat
+                                </a>
+                            </div>
+                            <div class="level-2 menu-item" id="Felnott_Index_Menu">
+                                <a class="list-group-item" href="/Player/FelnottIndex" draggable="false" ondragstart="return false;">
+                                    <i data-icon="τ"></i>Felnőtt csapat
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" id="Users_Menu">
+                        <a class="list-group-item" href="/Player/Index" draggable="false" ondragstart="return false;">
+                            <i data-icon="v"></i>Felhasználók
+                        </a>
+                    </div>
+
+</aside>
+        
+    </section>
+    <section class="content-wrapper row">
+        <section class="content col-md-8 offset-md-4 col-lg-9 offset-lg-3 col-xl-10 offset-xl-2">
             <div class="col-md-12 col-lg-12 col-xl-12">
                 @RenderBody()
             </div>
-    </section>
+        </section>
     </section>
 
     @Scripts.Render("~/bundles/jquery")
