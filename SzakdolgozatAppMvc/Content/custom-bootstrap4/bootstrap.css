@@ -3430,10 +3430,11 @@ input[type="button"].btn-block {
     background-color: #1d2124; }
 
 .jumbotron {
-  padding: 2rem 1rem;
-  margin-bottom: 2rem;
-  background-color: #e9ecef;
-  border-radius: 0.3rem; }
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background-color: #4d70ef;
+    border-radius: 0.3rem;
+}
   @media (min-width: 576px) {
     .jumbotron {
       padding: 4rem 2rem; } }
@@ -7663,10 +7664,11 @@ tr.ui-search-toolbar {
     color: #777777; }
 
 .navbar-fixed-top {
-  height: 50px;
-  background-color: #333333;
-  color: #fff !important;
-  z-index: 1080; }
+    height: 50px;
+    background-color: #06042c;
+    color: #fff !important;
+    z-index: 1080;
+}
   .navbar-fixed-top .btn-group {
     position: relative; }
     .navbar-fixed-top .btn-group span:first-child {
@@ -7680,8 +7682,9 @@ tr.ui-search-toolbar {
   color: #fff; }
 
 .sidebar-wrapper {
-  background-color: #6f6e73;
-  z-index: 1020; }
+    background-color: #1b1141;
+    z-index: 1020;
+}
 
 .sidebar-wrapper, .sidebar-nav, .sidebar-nav-sub {
   position: absolute;
@@ -7704,13 +7707,14 @@ tr.ui-search-toolbar {
   left: 0;
   right: 0;
   margin: 0; }
-  .content-wrapper .content {
-    position: absolute;
-    background-color: #f1f1f1;
-    overflow-y: scroll;
-    top: 0;
-    bottom: 0;
-    right: 0; }
+    .content-wrapper .content {
+        position: absolute;
+        background-color: #4d70ef;
+        overflow-y: scroll;
+        top: 0;
+        bottom: 0;
+        right: 0;
+    }
 
 .page-header {
   border-bottom: none; }
