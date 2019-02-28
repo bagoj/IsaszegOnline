@@ -59,7 +59,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
+  color: #ffffff;
   text-align: left;
   background-color: #fff; }
 
@@ -7169,7 +7169,7 @@ h1, h2, h3, h4, h5, h6,
   font-family: inherit;
   font-weight: 500;
   line-height: 1.1;
-  color: #ec7b2f; }
+  color: #ffffff; }
   h1 small,
   h1 .small, h2 small,
   h2 .small, h3 small,
@@ -7981,10 +7981,11 @@ tr.ui-search-toolbar {
       box-shadow: 0 0 0 0.2rem rgba(204, 204, 204, 0.5); }
 
 .btn-primary {
-  color: #fff;
-  background-color: #ec7b2f;
-  border-color: #ea6c18;
-  color: #fff; }
+    color: #fff;
+    background-color: #5e2fec;
+    border-color: #ea6c18;
+    color: #fff;
+}
   .btn-primary:hover {
     color: #fff;
     background-color: #e06614;
@@ -10603,12 +10604,14 @@ div[id$='_Filter_Select'].select2-container {
     background-image: none; }
 
 .btn-primary {
-  filter: e(% "progid:DXImageTransform.Microsoft.gradient(enabled = false)");
-  background-repeat: repeat-x;
-  border-color: #c25912; }
-  .btn-primary:hover, .btn-primary:focus {
-    background-color: #cb5d13;
-    background-position: 0 -15px; }
+    filter: e(% "progid:DXImageTransform.Microsoft.gradient(enabled = false)");
+    background-repeat: repeat-x;
+    border-color: #1512c2;
+}
+    .btn-primary:hover, .btn-primary:focus {
+        background-color: #1512c2;
+        background-position: 0 -15px;
+    }
   .btn-primary:active, .btn-primary.active {
     background-color: #cb5d13;
     border-color: #c25912; }
