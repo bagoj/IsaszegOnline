@@ -38,7 +38,7 @@
                         </a>
                     </div>
                     <div class="menu-item" id="Csapat_Menu">
-                        <a class="list-group-item" data-toggle="collapse" href="#Csapat" draggable="false" ondragstart="return false;">
+                        <a class="list-group-item" data-toggle="collapse" href="#Csapat" draggable="false" ondragstart="return false;" onclick="collapseMenuNavigate($(this))">
                             <i data-icon="γ"></i>Csapatok
                         </a>
                         <div class="collapse panel-collapse" id="Csapat">
@@ -64,8 +64,8 @@
                             <i data-icon="v"></i>Felhasználók
                         </a>
                     </div>
-                    </div>
-                </nav>
+                </div>
+            </nav>
         </aside>
     </section>
     <section class="content-wrapper row">
@@ -78,6 +78,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/menu")
     @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -14,6 +14,8 @@ namespace SzakdolgozatAppMvc
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/menu").Include(
+            "~/Scripts/menu.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/login").Include(
                         "~/Scripts/Views/login.js"));
