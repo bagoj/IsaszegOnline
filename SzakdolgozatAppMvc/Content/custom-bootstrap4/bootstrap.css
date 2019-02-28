@@ -137,10 +137,11 @@ sup {
   top: -.5em; }
 
 a {
-  color: #007bff;
-  text-decoration: none;
-  background-color: transparent;
-  -webkit-text-decoration-skip: objects; }
+    color: #edff00;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
   a:hover {
     color: #0056b3;
     text-decoration: underline; }
@@ -7857,17 +7858,19 @@ tr.ui-search-toolbar {
           background-color: #666666; }
 
 .login-container {
-  position: relative;
-  background-color: #fff;
-  -webkit-box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
-  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  margin-top: 100px;
-  max-width: 800px; }
-  .login-container .login-title {
-    margin-top: 10px;
-    color: #ec7b2f; }
+    position: relative;
+    background-color: #dde1f6;
+    -webkit-box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin-top: 100px;
+    max-width: 800px;
+}
+    .login-container .login-title {
+        margin-top: 10px;
+        color: #2f82ec;
+    }
   .login-container .banner-picture {
     margin: 0 0 20px 0; }
   .login-container .poszeidon-logo {
