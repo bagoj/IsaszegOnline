@@ -1,7 +1,6 @@
 ﻿<table id="jqGrid"></table>
 <div id="jqGridPager"></div>
 
-@Styles.Render("~/Content/gridcss")
 
 @section scripts{
 
@@ -15,7 +14,7 @@
         colModel: [
             { label: 'Id', name: 'Id', hidden: true },
             { label: 'Név', name: 'Name' },
-            { label: 'Poszt', name: 'PosztId' },
+            { label: 'Poszt', name: 'Poszt' },
             { label: 'Kor', name: 'Age' },
             { label: 'Születési év', name: 'Bornyear' }
         ],

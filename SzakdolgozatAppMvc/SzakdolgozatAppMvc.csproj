@@ -504,6 +504,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Datamodel\Model.cs" />
+    <Compile Include="Models\PlayerGridModel.cs" />
     <Compile Include="Models\PlayerModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
