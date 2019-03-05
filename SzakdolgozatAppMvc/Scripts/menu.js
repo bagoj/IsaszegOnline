@@ -3,7 +3,20 @@
 $(function () {
     dragablefalse();
     markActiveMenuItem();
+    DropUp();
 });
+
+function DropUp() {
+    $('div.dropdown-menu').on('click', function () {
+        $(this).children('ul.dropdown-menu').addClass('show');
+    });
+
+    $('body').on('click', function (event) {
+        if (!$('div.dropdown-menu').is(event.target) && $('div.dropdown-menu').has(event.target).length === 0) {
+            $('div.dropdown-menu').children('ul.dropdown-menu').removeClass('show');
+        };
+    });
+}
 
 function dragablefalse() {
     $('.sidebar-nav .menu-item .list-group-item').attr('draggable', false);
