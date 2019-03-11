@@ -23,6 +23,10 @@ function dragablefalse() {
     $('.sidebar-nav .menu-item .list-group-item').attr('ondragstart', 'return false;');
 }
 
+function href(link) {
+    window.location = window.location.protocol + "/" + link;
+}
+
 function markActiveMenuItem() {
     var menuItems = $('.sidebar-nav .menu-item .list-group-item');
     var activeMenuItem = getActiveMenuItem(window.location.pathname, menuItems);
