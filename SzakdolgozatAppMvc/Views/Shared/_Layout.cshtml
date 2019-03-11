@@ -13,10 +13,19 @@
             <div id="HeaderPartialContainer">
                 <nav class="navbar navbar-fixed-top">
                     <div class="container-fluid">
-                        <div class="btn-group float-right">
-                            <a class="dropdown-item" href="/Home/Login" draggable="false" ondragstart="return false;">
-                                <i data-icon="v"></i>Bejelentkezés
-                            </a>
+                        <div id="UserMenu" class="btn-group float-right dropdown-menu hidden">
+                            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
+                                <span id="Felhasznalonev">
+                                    <i data-icon="C"></i>
+                                    
+                                </span>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li class="dropdown-item" onclick="href('User/Profil')">Profilom</li>
+                                <li class="divider"></li>
+                                <li class="dropdown-item" onclick="logOut()">Kijelentkezés</li>
+                            </ul>
                         </div>
                     </div>
                 </nav>
