@@ -9,9 +9,13 @@
         if (data === true || data === 'true' || data == 'True') {
             $('#UserMenu').removeClass('hidden');
             document.getElementById('Felhasznalonev').innerHTML = "Bagó József";
+            var bej = document.getElementById('bejelentkezve');
+            bej.setAttribute('value', true);
         }
-        else window.alert('Sikertelen bejelentkezés!');
-            //itt nem
+        else {
+            window.alert('Sikertelen bejelentkezés!');
+            bej.setAttribute('value', false);
+        }
         });
 }
 

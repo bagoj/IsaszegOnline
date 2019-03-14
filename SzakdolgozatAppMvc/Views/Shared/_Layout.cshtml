@@ -13,11 +13,29 @@
             <div id="HeaderPartialContainer">
                 <nav class="navbar navbar-fixed-top">
                     <div class="container-fluid">
+                        <div>
+                            <span class="hidden" id="bejelentkezve" value=""></span>
+                            <span class="hidden" id="userName" value=""></span>
+                            <span class="hidden" id="userRole" value=""></span>
+                        </div>
+                        <div id="LogIn" class="btn-group float-left dropdown-menu">
+                            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
+                                <span id="BejelntkezesMenu">
+                                    <i data-icon="C"></i>
+                                    Bejelentkezés vagy regisztráció
+                                </span>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li class="dropdown-item" onclick="href('Home/Login')">Bejelentkezés</li>
+                                <li class="dropdown-item" onclick="href('Home/Registration')">Regisztráció</li>
+                            </ul>
+                        </div>
                         <div id="UserMenu" class="btn-group float-right dropdown-menu hidden">
                             <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
                                 <span id="Felhasznalonev">
                                     <i data-icon="C"></i>
-                                    
+
                                 </span>
                                 <span class="caret"></span>
                             </button>

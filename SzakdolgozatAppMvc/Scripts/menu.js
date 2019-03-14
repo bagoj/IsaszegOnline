@@ -15,7 +15,13 @@ function DropUp() {
         if (!$('div.dropdown-menu').is(event.target) && $('div.dropdown-menu').has(event.target).length === 0) {
             $('div.dropdown-menu').children('ul.dropdown-menu').removeClass('show');
         };
+        var bej = document.getElementById('bejelentkezve');
+        var bee = bej.getAttribute('value');
+        if (bee == true) {
+            $('#UserMenu').removeClass('hidden');
+        }
     });
+
 }
 
 function dragablefalse() {
