@@ -6,17 +6,12 @@
         url: window.location.origin + '/Login/GetFelhasznalo',
         data: { username: username, pswd: pswd }
     }).done(function (data) {
-        if (data === true || data === 'true' || data == 'True') {
             $('#UserMenu').removeClass('hidden');
-            document.getElementById('Felhasznalonev').innerHTML = "Bagó József";
+            document.getElementById('Felhasznalonev').innerHTML = data.Name;
             var bej = document.getElementById('bejelentkezve');
             bej.setAttribute('value', true);
-        }
-        else {
-            window.alert('Sikertelen bejelentkezés!');
-            bej.setAttribute('value', false);
-        }
-        });
+            bej.innerHTML = "true";
+        }).fail(function (data) { window.alert('Sikertelen bejelentkezés!');});
 }
 
 function logOut() {

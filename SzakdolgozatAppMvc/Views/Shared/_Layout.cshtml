@@ -6,6 +6,11 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/bootstrap")
+    <div class="content">
+        <span class="hidden" id="bejelentkezve" value=""></span>
+        <span class="hidden" id="userName" value=""></span>
+        <span class="hidden" id="userRole" value=""></span>
+    </div>
 </head>
 <body>
     <header class="navbar-fixed-top">
@@ -13,11 +18,6 @@
             <div id="HeaderPartialContainer">
                 <nav class="navbar navbar-fixed-top">
                     <div class="container-fluid">
-                        <div>
-                            <span class="hidden" id="bejelentkezve" value=""></span>
-                            <span class="hidden" id="userName" value=""></span>
-                            <span class="hidden" id="userRole" value=""></span>
-                        </div>
                         <div id="LogIn" class="btn-group float-left dropdown-menu">
                             <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
                                 <span id="BejelntkezesMenu">

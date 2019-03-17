@@ -9,7 +9,7 @@ namespace SzakdolgozatAppMvc.BusinessLogic
 {
     public class UserService
     {
-        public bool GetUser(string UserName, string Pswd)
+        public List<UserModel> GetUser(string UserName, string Pswd)
         {
             using (DataModel db = new DataModel())
             {
@@ -18,9 +18,11 @@ namespace SzakdolgozatAppMvc.BusinessLogic
                               && c.C_PASSWORD == Pswd
                               select new UserModel
                               {
-                                  Id = c.Id
+                                  Id = c.Id,
+                                  Name = c.C_NAME,
+                                  Address = c.C_ADRESS
                               }).ToList();
-                return result.Count==1;
+                return result;
             }
         }
     }

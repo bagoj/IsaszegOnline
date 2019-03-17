@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using SzakdolgozatAppMvc.BusinessLogic;
+using SzakdolgozatAppMvc.Models;
 
 namespace SzakdolgozatAppMvc.Controllers
 {
@@ -17,12 +18,12 @@ namespace SzakdolgozatAppMvc.Controllers
             return View();
         }
 
-        public bool GetFelhasznalo(string username, string pswd)
+        public JsonResult GetFelhasznalo(string username, string pswd)
         {
-            bool belep_E = userService.GetUser(username, pswd);
-            if (belep_E)
-                return true;
-            else return false;
+            List<UserModel> userModels= userService.GetUser(username, pswd);
+            if (userModels.Count >0)
+                return new JsonResult() { Data = userModels[0], JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            else return new JsonResult() { Data = null, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
     }
 }
