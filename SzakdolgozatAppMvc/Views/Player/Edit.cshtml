@@ -1,0 +1,60 @@
+﻿@model SzakdolgozatAppMvc.Models.PlayerGridModel
+
+@{
+    
+}
+<input type="hidden" id="EntityID" value="@Model.Id" />
+<div class="col-xs-12 col-md-6 col-lg-6 col-xl-6">
+    <h1 class="title">@ViewBag.Title</h1>
+    <div class="form-row" id="PlayerName">
+        <label class="col-xs-12 col-sm-12 col-md-5 col-lg-5 col-xl-4 col-form-label" for="">Játékos neve:</label>
+        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-8">
+            <div class="input-group">
+                <input class="form-control" id="PlayerName" name="PlayerName" readonly="True" type="text" value="@Model.Name">
+            </div>
+        </div>
+    </div>
+    <div class="form-row" id="BornYear">
+        <label class="col-xs-12 col-sm-12 col-md-5 col-lg-5 col-xl-4 col-form-label" for="">Születési év:</label>
+        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-8">
+            <div class="input-group">
+                <input class="form-control" id="BornYear" name="BornYear" readonly="True" type="text" value="@Model.Bornyear">
+            </div>
+        </div>
+    </div>
+        <div class="form-row" id="Age">
+        <label class="col-xs-12 col-sm-12 col-md-5 col-lg-5 col-xl-4 col-form-label" for="">Életkor:</label>
+        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-8">
+            <div class="input-group">
+                <input class="form-control" id="Age" name="Age" readonly="True" type="text" value="@Model.Age">
+            </div>
+        </div>
+    </div>
+    <div class="form-row" id="Poszt">
+        <label class="col-xs-12 col-sm-12 col-md-5 col-lg-5 col-xl-4 col-form-label" for="">Posztja:</label>
+        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-8">
+            <div class="input-group">
+                <input class="form-control" id="Poszt" name="Poszt" readonly="True" type="text" value="@Model.Poszt">
+            </div>
+        </div>
+    </div>
+    <footer class="fixed-bottom">
+        <div class="row">
+            <div class="text-center row ">
+                <div class="row btn-group col-md-10" id="functionButtonMenuRow">
+                    <div class="col-md-1">
+                        <button class="btn-primary btn hidden" type="button" id="pageLeft">
+                            <i data-icon="R"></i>
+                        </button>
+                    </div>
+                    <div class="col-md-10" id="functionButtonMenu">
+
+                        <button class="btn-primary btn functionButtonVisible" id="Mentes_Button" onclick="submitForm();" type="button"><i data-icon="N"></i>Mentés</button>
+                        <button class="btn-primary btn functionButtonVisible" id="Megse_Button" onclick="IratokEdit.Cancel()" type="button"><i data-icon="w"></i>Mégse</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>

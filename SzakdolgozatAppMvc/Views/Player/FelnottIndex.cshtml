@@ -1,6 +1,5 @@
 ﻿<table id="jqGrid"></table>
-<div id="jqGridPager"></div>
-
+<div id="jqg-pager"></div>
 
 @section scripts{
 
@@ -16,10 +15,21 @@
             { label: 'Név', name: 'Name' },
             { label: 'Poszt', name: 'Poszt' },
             { label: 'Kor', name: 'Age' },
-            { label: 'Születési év', name: 'Bornyear' }
-        ],
-        loadonce: true
-    });
-});
+            { label: 'Születési év', name: 'Bornyear' },
+            { name: 'Lehetőségek', index: 'price', width: 60, align: "center", editable: true, formatter: formatOperations }
+                ],
+                rowNum: 500, // number of rows displayed
+                loadonce: false, // load only once
+                sortname: 'NAME', // sort by default by NAME column
+                sortorder: "asc",
+                width: window.innerWidth - 80, // grid width
+                height: 300, // grid height
+                viewrecords: true, // display the number of records
+                caption: "Customers",
+                pager: 'jqg-pager' // navigation item id
+            });
+
+        });
+
     </script>
 }

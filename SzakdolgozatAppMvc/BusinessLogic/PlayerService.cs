@@ -26,5 +26,24 @@ namespace SzakdolgozatAppMvc.BusinessLogic
                 return result ;
             }
         }
+
+        public PlayerModel Get(int? id)
+        {
+            using (Model db = new Model())
+            {
+                var result = (from c in db.T_PLAYER
+                              where c.Id == id
+                              select new PlayerModel
+                              {
+                                  Id = c.Id,
+                                  Name = c.C_NAME,
+                                  CsapatId = c.C_CSAPATID,
+                                  Bornyear = c.C_BORNYEAR,
+                                  Age = c.C_AGE,
+                                  PosztId = c.C_POSZTID
+                              }).FirstOrDefault();
+                return result;
+            }
+        }
     }
 }

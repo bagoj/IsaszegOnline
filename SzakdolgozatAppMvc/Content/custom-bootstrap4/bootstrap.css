@@ -7678,9 +7678,10 @@ tr.ui-search-toolbar {
     color: #ec7b2f; }
 
 .fixed-bottom {
-  height: 50px;
-  background-color: #333333;
-  color: #fff; }
+    height: 50px;
+    background-color: #06042c;
+    color: #fff;
+}
 
 .sidebar-wrapper {
     background-color: #1b1141;
@@ -8503,7 +8504,7 @@ input[type="checkbox"] fieldset[disabled],
     text-align: right; } }
 
 .form-row .col-form-label {
-  color: #555;
+  color: #fff;
   font-weight: normal; }
 
 .form-row .has-feedback .form-control-feedback {

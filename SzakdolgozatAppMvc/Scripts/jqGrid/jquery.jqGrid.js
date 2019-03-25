@@ -21103,3 +21103,10 @@
 	};
 	// end module jquery.fmatter
 }));
+
+function formatOperations(cellvalue, options, rowObject) {
+    var id = $(this).parents().find('Id').val();
+    return "<a href='/Player/Edit?id=" + rowObject.Id + "'><u>Szerkeszt</u></a>  " +
+        "<a href='/Player/Details?id=" + rowObject.Id + "'><u>Megtekint</u></a>  " +
+        "<a href='/Player/Delete?id=" + rowObject.Id  + "'><u>Töröl</u></a>";
+}

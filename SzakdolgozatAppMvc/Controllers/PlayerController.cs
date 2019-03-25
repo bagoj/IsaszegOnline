@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using SzakdolgozatAppMvc.BusinessLogic;
@@ -73,31 +74,19 @@ namespace SzakdolgozatAppMvc.Controllers
             List<PlayerGridModel> pgmList = new List<PlayerGridModel>();
             foreach (var x in pm)
             {
-                PlayerGridModel pgm = new PlayerGridModel();
-                pgm.Id = x.Id;
-                pgm.Age = x.Age;
-                switch (x.PosztId)
-                {
-                    case (int)Enums.Enums.Position.Kapus:
-                        pgm.Poszt = "Kapus";
-                        break;
-                    case (int)Enums.Enums.Position.Védő:
-                        pgm.Poszt = "Védő";
-                        break;
-                    case (int)Enums.Enums.Position.Középpályás:
-                        pgm.Poszt = "Középpályás";
-                        break;
-                    case (int)Enums.Enums.Position.Csatár:
-                        pgm.Poszt = "Csatár";
-                        break;
-                }
-                pgm.Name = x.Name;
-                pgm.Bornyear = x.Bornyear;
-                pgm.Age = x.Age;
-                pgmList.Add(pgm);
+                pgmList.Add((PlayerGridModel)x);
             }
             return pgmList;
         }
 
+        public ActionResult Edit(int? id)
+        {
+            if (id == null) throw new Exception("Nincs ID");
+            PlayerModel pm = ps.Get(id);
+            PlayerGridModel pgm = (PlayerGridModel)pm;
+            ViewBag.Title = pgm.Name + " szerkesztése";
+            pgm.Age = DateTime.Now.Year - pgm.Bornyear;
+            return View(pgm);
+        }
     }
 }
