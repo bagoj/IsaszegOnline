@@ -81,12 +81,31 @@ namespace SzakdolgozatAppMvc.Controllers
 
         public ActionResult Edit(int? id)
         {
-            if (id == null) throw new Exception("Nincs ID");
+            if (id == null) throw new ArgumentNullException(nameof(id));
             PlayerModel pm = ps.Get(id);
             PlayerGridModel pgm = (PlayerGridModel)pm;
             ViewBag.Title = pgm.Name + " szerkesztése";
+            ViewBag.ReadOnly = false;
             pgm.Age = DateTime.Now.Year - pgm.Bornyear;
             return View(pgm);
+        }
+
+        public ActionResult Details(int? id)
+        {
+            if (id == null) throw new ArgumentNullException(nameof(id));
+            PlayerModel pm = ps.Get(id);
+            PlayerGridModel pgm = (PlayerGridModel)pm;
+            ViewBag.Title = pgm.Name + " szerkesztése";
+            ViewBag.ReadOnly = true;
+            pgm.Age = DateTime.Now.Year - pgm.Bornyear;
+            return View("Edit",pgm);
+        }
+
+        public ActionResult Delete(int? id)
+        {
+            if (id == null) throw new ArgumentNullException(nameof(id));
+            //DELETE
+            return View();
         }
     }
 }

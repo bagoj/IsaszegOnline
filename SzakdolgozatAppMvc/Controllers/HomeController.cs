@@ -30,5 +30,10 @@ namespace SzakdolgozatAppMvc.Controllers
         {
             return View();
         }
+
+        public ActionResult Regisztracio()
+        {
+            return View();
+        }
     }
 }

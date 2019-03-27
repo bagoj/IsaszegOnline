@@ -1,5 +1,23 @@
 ﻿<table id="jqGrid"></table>
 <div id="jqg-pager"></div>
+<footer class="fixed-bottom">
+    <div class="row">
+        <div class="text-center row ">
+            <div class="row btn-group col-md-10" id="functionButtonMenuRow">
+                <div class="col-md-1">
+                    <button class="btn-primary btn hidden" type="button" id="pageLeft">
+                        <i data-icon="R"></i>
+                    </button>
+                </div>
+                <div class="col-md-10" id="functionButtonMenu">
+
+                    <button class="btn-primary btn functionButtonVisible" id="Mentes_Button" onclick="href('Player/Add?id=2')" type="button"><i data-icon="N"></i>Hozzáad</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 
 @Styles.Render("~/Content/gridcss")
 
