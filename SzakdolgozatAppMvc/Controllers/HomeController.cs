@@ -31,8 +31,16 @@ namespace SzakdolgozatAppMvc.Controllers
             return View();
         }
 
+        [HttpGet]
         public ActionResult Regisztracio()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Regisztracio(string eredmeny)
+        {
+            var r = eredmeny;
             return View();
         }
     }

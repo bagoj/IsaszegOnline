@@ -18,3 +18,29 @@ function logOut() {
     $('#UserMenu').addClass('hidden');
     window.alert('Sikeres kijelentkezés!');
 }
+
+function Cancel() {
+    href('Home/Index');
+}
+
+function submitForm() {
+    if ($('#Pswd').val() !== $('#Pswd2').val())
+        window.alert('Nem egyezik a két jelsző');
+    else {
+        var model = {
+            UserName: "Shyju",
+            Location: "Detroit",
+            Interests: ["Code", "Coffee", "Stackoverflow"]
+        };
+        var stri = JSON.stringify(model);
+        $.ajax(
+            {
+                type: "POST", //HTTP POST Method  
+                url: "Regisztracio", // Controller/View   
+                data: { eredmeny: stri },
+                processData: false,
+                contentType: false,
+
+            });
+    } 
+}

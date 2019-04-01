@@ -1,37 +1,56 @@
-﻿@{
-    Layout = null;
+﻿@Scripts.Render("~/bundles/login")
+
+@{
+
 }
+<input type="hidden" id="EntityID" value="" />
 <div class="col-xs-12 col-md-6 col-lg-6 col-xl-6">
-    <h1 class="title">@ViewBag.Title</h1>
-    <div class="form-row" id="PlayerName">
-        <label class="col-xs-12 col-sm-12 col-md-5 col-lg-5 col-xl-4 col-form-label" for="">Játékos neve:</label>
+    <h1 class="title">Regisztráció</h1>
+    <div class="form-row" id="UserName">
+        <label class="col-xs-12 col-sm-12 col-md-5 col-lg-5 col-xl-4 col-form-label" for="">Felhasználó név:</label>
         <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-8">
             <div class="input-group">
-             @*   <input class="form-control" id="PlayerName" name="PlayerName" readonly="@ViewBag.ReadOnly" type="text" value="@Model.Name">*@
+                <input class="form-control" id="UserName" name="UserName" readonly="@ViewBag.ReadOnly" type="text" >
+            </div>
+        </div>
+    </div>
+    <div class="form-row" id="BornName">
+        <label class="col-xs-12 col-sm-12 col-md-5 col-lg-5 col-xl-4 col-form-label" for="">Nyomtatott név:</label>
+        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-8">
+            <div class="input-group">
+                <input class="form-control" id="BornName" name="BornName" readonly="@ViewBag.ReadOnly" type="text">
             </div>
         </div>
     </div>
     <div class="form-row" id="BornYear">
-        <label class="col-xs-12 col-sm-12 col-md-5 col-lg-5 col-xl-4 col-form-label" for="">Születési év:</label>
+        <label class="col-xs-12 col-sm-12 col-md-5 col-lg-5 col-xl-4 col-form-label" for="">Jelszó:</label>
         <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-8">
             <div class="input-group">
-              @*  <input class="form-control" id="BornYear" name="BornYear" readonly="@ViewBag.ReadOnly" type="text" value="@Model.Bornyear">*@
+                <input class="form-control" id="Pswd" name="Pswd" readonly="@ViewBag.ReadOnly" type="password">
             </div>
         </div>
     </div>
     <div class="form-row" id="Age">
-        <label class="col-xs-12 col-sm-12 col-md-5 col-lg-5 col-xl-4 col-form-label" for="">Életkor:</label>
+        <label class="col-xs-12 col-sm-12 col-md-5 col-lg-5 col-xl-4 col-form-label" for="">Jelszó mégegyszer:</label>
         <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-8">
             <div class="input-group">
-              @*  <input class="form-control" id="Age" name="Age" readonly="@ViewBag.ReadOnly" type="text" value="@Model.Age">*@
+                <input class="form-control" id="Pswd2" name="Pswd2" readonly="@ViewBag.ReadOnly" type="password">
             </div>
         </div>
     </div>
     <div class="form-row" id="Poszt">
-        <label class="col-xs-12 col-sm-12 col-md-5 col-lg-5 col-xl-4 col-form-label" for="">Posztja:</label>
+        <label class="col-xs-12 col-sm-12 col-md-5 col-lg-5 col-xl-4 col-form-label" for="">Cím:</label>
         <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-8">
             <div class="input-group">
-             @*   <input class="form-control" id="Poszt" name="Poszt" readonly="@ViewBag.ReadOnly" type="text" value="@Model.Poszt">*@
+                <input class="form-control" id="Address" name="Address" readonly="@ViewBag.ReadOnly" type="text">
+            </div>
+        </div>
+    </div>
+    <div class="form-row" id="City">
+        <label class="col-xs-12 col-sm-12 col-md-5 col-lg-5 col-xl-4 col-form-label" for="">Város:</label>
+        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-8">
+            <div class="input-group">
+                <input class="form-control" id="City" name="City" readonly="@ViewBag.ReadOnly" type="text">
             </div>
         </div>
     </div>
@@ -46,8 +65,8 @@
                     </div>
                     <div class="col-md-10" id="functionButtonMenu">
 
-                        <button class="btn-primary btn functionButtonVisible" id="Mentes_Button" onclick="regisztracio()" type="button"><i data-icon="N"></i>Regisztráció</button>
-                        <button class="btn-primary btn functionButtonVisible" id="Megse_Button" onclick="cancel()" type="button"><i data-icon="w"></i>Mégse</button>
+                        <button class="btn-primary btn functionButtonVisible" id="Mentes_Button" onclick="submitForm();" type="button"><i data-icon="N"></i>Mentés</button>
+                        <button class="btn-primary btn functionButtonVisible" id="Megse_Button" onclick="Cancel()" type="button"><i data-icon="w"></i>Mégse</button>
 
                     </div>
                 </div>
