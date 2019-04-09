@@ -107,5 +107,11 @@ namespace SzakdolgozatAppMvc.Controllers
             //DELETE
             return View();
         }
+
+        public ActionResult Add()
+        {
+            //DELETE
+            return View();
+        }
     }
 }

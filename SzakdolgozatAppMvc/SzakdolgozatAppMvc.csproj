@@ -738,6 +738,7 @@
     <Content Include="Content\bootstrap4\_utilities.scss" />
     <Content Include="Content\bootstrap4\_variables.scss" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\common.js" />
     <Content Include="Scripts\gridmvc.js" />
     <Content Include="Scripts\gridmvc.lang.ru.js" />
     <Content Include="Scripts\gridmvc.min.js" />
@@ -779,6 +780,7 @@
     <Content Include="Views\User\Profilom.cshtml" />
     <Content Include="Views\Player\Edit.cshtml" />
     <Content Include="Views\Home\Regisztracio.cshtml" />
+    <Content Include="Views\Player\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

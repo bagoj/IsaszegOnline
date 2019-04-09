@@ -1,4 +1,6 @@
-﻿function bejelentkezes() {
+﻿
+
+function bejelentkezes() {
     var username = $('#UserName').val();
     var pswd = $('#Password').val();
     
@@ -10,12 +12,14 @@
             document.getElementById('Felhasznalonev').innerHTML = data.Name;
             var bej = document.getElementById('bejelentkezve');
             bej.setAttribute('value', true);
-            bej.innerHTML = "true";
+        bej.innerHTML = "true";
+        bee = true;
         }).fail(function (data) { window.alert('Sikertelen bejelentkezés!');});
 }
 
 function logOut() {
     $('#UserMenu').addClass('hidden');
+    bee = false;
     window.alert('Sikeres kijelentkezés!');
 }
 
