@@ -113,5 +113,11 @@ namespace SzakdolgozatAppMvc.Controllers
             //DELETE
             return View();
         }
+        [HttpPost]
+        public ActionResult Add(PlayerModel model)
+        {
+            var s=0;
+            return View("IfjusagiIndex");
+        }
     }
 }
