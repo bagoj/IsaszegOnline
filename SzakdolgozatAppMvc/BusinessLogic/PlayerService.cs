@@ -10,7 +10,7 @@ namespace SzakdolgozatAppMvc.BusinessLogic
     {
         public List<PlayerModel> GetPlayer (int csapatId)
         {
-            using (Model db = new Model())
+            using (IsaszegDB db = new IsaszegDB())
             {
                 var result = (from c in db.T_PLAYER
                               where c.C_CSAPATID == csapatId
@@ -31,7 +31,7 @@ namespace SzakdolgozatAppMvc.BusinessLogic
         {
             try
             {
-                using (Model db = new Model())
+                using (IsaszegDB db = new IsaszegDB())
                 {
                     var result = (from c in db.T_PLAYER
                                   where c.Id == id

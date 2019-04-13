@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using SzakdolgozatAppMvc.BusinessLogic;
-using SzakdolgozatAppMvc.Datamodel;
 using SzakdolgozatAppMvc.Models;
 
 namespace SzakdolgozatAppMvc.Controllers
@@ -34,15 +33,15 @@ namespace SzakdolgozatAppMvc.Controllers
 
         public ActionResult GetPlayer()
         { 
-            using (DataModel db = new DataModel())
+            using (IsaszegDB db = new IsaszegDB())
             {
                 var result = (from c in db.T_USER
                               select new UserModel
                               {
                                   Id = c.Id,
                                   Name = c.C_NAME,
-                                  Address = c.C_ADRESS,
-                                  City = c.C_CITY
+                                  Address = c.C_ADDRESS,
+                                  City = c.C_ISZ
                               }).ToList();
                 return Json(new { rows = result }, JsonRequestBehavior.AllowGet);
             }
@@ -110,8 +109,8 @@ namespace SzakdolgozatAppMvc.Controllers
 
         public ActionResult Add()
         {
-            //DELETE
-            return View();
+            PlayerModel playerModel = new PlayerModel();
+            return View("Add",playerModel);
         }
         [HttpPost]
         public ActionResult Add(PlayerModel model)

@@ -1,4 +1,4 @@
-﻿@model SzakdolgozatAppMvc.Models.PlayerGridModel
+﻿@model SzakdolgozatAppMvc.Models.PlayerModel
 
 @{
 
@@ -9,7 +9,7 @@
     {
 
         @Html.IsaTextBox("PlayerName", "Játékos neve:", Model.Name)
-        @Html.IsaTextBox("Poszt", "Posztja: ", Model.Poszt)
+        @*@Html.EnumDropDownListFor(2)*@
         @Html.IsaTextBox("BornYear", "Születési év:", Model.Bornyear)
         @Html.IsaTextBox("Age", "Életkor:", Model.Age)
         <footer class="fixed-bottom">

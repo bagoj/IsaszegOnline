@@ -11,12 +11,12 @@ namespace SzakdolgozatAppMvc
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
-        public int C_CSAPATID { get; set; }
-
         [StringLength(100)]
         public string C_NAME { get; set; }
 
-        public int? C_POSZTID { get; set; }
+        public int C_POSZTID { get; set; }
+
+        public int C_CSAPATID { get; set; }
 
         public int? C_AGE { get; set; }
 

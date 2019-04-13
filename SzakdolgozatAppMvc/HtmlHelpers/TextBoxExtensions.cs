@@ -28,7 +28,9 @@ namespace SzakdolgozatAppMvc
             input.MergeAttribute("name", divId);
             input.MergeAttribute("readonly", readonlyE.ToString());
             input.MergeAttribute("type", "text");
+            if(expression != null)
             input.MergeAttribute("value", expression.ToString());
+            else input.MergeAttribute("value", "");
             divin.InnerHtml = input.ToString();
             belsoDiv.InnerHtml = divin.ToString();
             div.InnerHtml = label.ToString() + belsoDiv.ToString();

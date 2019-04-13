@@ -497,21 +497,25 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PlayerController.cs" />
-    <Compile Include="Datamodel\DataModel.cs" />
-    <Compile Include="Datamodel\T_USER.cs" />
     <Compile Include="Enums\Enums.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Datamodel\Model.cs" />
     <Compile Include="HtmlHelpers\TextBoxExtensions.cs" />
+    <Compile Include="IsaszegDB.cs" />
     <Compile Include="Models\PlayerGridModel.cs" />
     <Compile Include="Models\PlayerModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Datamodel\T_PLAYER.cs" />
+    <Compile Include="T_KODTETEL.cs" />
+    <Compile Include="T_PLAYER.cs" />
+    <Compile Include="T_USER.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\IsaDB.mdf" />
+    <Content Include="App_Data\IsaDB_log.ldf">
+      <DependentUpon>IsaDB.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-table.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -783,9 +787,7 @@
     <Content Include="Views\Home\Regisztracio.cshtml" />
     <Content Include="Views\Player\Add.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

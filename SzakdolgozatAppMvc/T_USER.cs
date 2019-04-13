@@ -1,4 +1,4 @@
-namespace SzakdolgozatAppMvc.Datamodel
+namespace SzakdolgozatAppMvc
 {
     using System;
     using System.Collections.Generic;
@@ -14,16 +14,18 @@ namespace SzakdolgozatAppMvc.Datamodel
         [StringLength(50)]
         public string C_NAME { get; set; }
 
-        [StringLength(50)]
-        public string C_ADRESS { get; set; }
+        public int? C_ISZ { get; set; }
 
-        [StringLength(50)]
-        public string C_CITY { get; set; }
+        [StringLength(100)]
+        public string C_ADDRESS { get; set; }
 
-        [StringLength(50)]
+        [StringLength(20)]
+        public string C_USERNAME { get; set; }
+
+        [StringLength(15)]
         public string C_PASSWORD { get; set; }
 
-        [StringLength(10)]
-        public string C_USERNAME { get; set; }
+        [StringLength(100)]
+        public string C_EMAIL { get; set; }
     }
 }
