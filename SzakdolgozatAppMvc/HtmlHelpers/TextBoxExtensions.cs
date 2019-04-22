@@ -26,7 +26,10 @@ namespace SzakdolgozatAppMvc
             input.MergeAttribute("class", "form-control");
             input.MergeAttribute("id", divId);
             input.MergeAttribute("name", divId);
-            input.MergeAttribute("readonly", readonlyE.ToString());
+            if (readonlyE)
+            {
+                input.MergeAttribute("readonly", readonlyE.ToString());
+            }
             input.MergeAttribute("type", "text");
             if(expression != null)
             input.MergeAttribute("value", expression.ToString());
@@ -44,5 +47,7 @@ namespace SzakdolgozatAppMvc
             input.MergeAttribute("value", expression.ToString());
             return new MvcHtmlString(input.ToString());
         }
+
+        //public static MvcHtmlString IsaRadioButton(this HtmlHelper htmlHelper,string Id,)
     }
 }

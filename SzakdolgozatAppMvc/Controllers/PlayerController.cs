@@ -88,6 +88,12 @@ namespace SzakdolgozatAppMvc.Controllers
             pgm.Age = DateTime.Now.Year - pgm.Bornyear;
             return View(pgm);
         }
+        [HttpPost]
+        public bool Edit(PlayerModel pm)
+        {
+            ps.Edit(pm);
+            return true;
+        }
 
         public ActionResult Details(int? id)
         {
@@ -103,20 +109,22 @@ namespace SzakdolgozatAppMvc.Controllers
         public ActionResult Delete(int? id)
         {
             if (id == null) throw new ArgumentNullException(nameof(id));
+            ps.Delete(id);
             //DELETE
-            return View();
+            return RedirectToAction("Home/Index");
         }
 
-        public ActionResult Add()
+        public ActionResult Add(int id)
         {
             PlayerModel playerModel = new PlayerModel();
+            playerModel.CsapatId = id;
             return View("Add",playerModel);
         }
         [HttpPost]
-        public ActionResult Add(PlayerModel model)
+        public bool Add(PlayerModel model)
         {
-            var s=0;
-            return View("IfjusagiIndex");
+            ps.Add(model);
+            return true;
         }
     }
 }

@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using SzakdolgozatAppMvc.BusinessLogic;
 using SzakdolgozatAppMvc.Models;
 
 namespace SzakdolgozatAppMvc.Controllers
 {
     public class HomeController : Controller
     {
+        UserService userService = new UserService();
         public ActionResult Index()
         {
             return View();
@@ -38,10 +40,10 @@ namespace SzakdolgozatAppMvc.Controllers
         }
 
         [HttpPost]
-        public ActionResult Regisztracio(string eredmeny)
+        public ActionResult Regisztracio(UserModel eredmeny)
         {
-            var r = eredmeny;
-            return View();
+            userService.Add(eredmeny);
+            return View("Index");
         }
     }
 }

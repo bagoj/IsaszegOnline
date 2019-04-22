@@ -28,22 +28,16 @@ function Cancel() {
 }
 
 function submitForm() {
-    if ($('#Pswd').val() !== $('#Pswd2').val())
+    if ($('input[name$=Pswd]').val() !== $('input[name$=Pswd2]').val())
         window.alert('Nem egyezik a két jelsző');
     else {
-        var model = {
-            UserName: "Shyju",
-            Location: "Detroit",
-            Interests: ["Code", "Coffee", "Stackoverflow"]
-        };
-        var stri = JSON.stringify(model);
+        var myData = { UserName: $('input[id$=UserName]').val(), Name: $('input[id$=BornName]').val(), Password: $('input[name$=Pswd]').val(), Address: $('input[name$=Address]').val(), City: $('input[name$=City]').val() };
+        
         $.ajax(
             {
                 type: "POST", //HTTP POST Method  
                 url: "Regisztracio", // Controller/View   
-                data: { eredmeny: stri },
-                processData: false,
-                contentType: false,
+                data: { eredmeny: myData },
 
             });
     } 

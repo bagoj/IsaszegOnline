@@ -17,6 +17,9 @@ namespace SzakdolgozatAppMvc
             bundles.Add(new ScriptBundle("~/bundles/menu").Include(
             "~/Scripts/menu.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/add").Include(
+            "~/Scripts/Views/playerAdd.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/login").Include(
                         "~/Scripts/Views/login.js"));
 
