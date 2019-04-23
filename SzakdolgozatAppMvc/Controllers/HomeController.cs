@@ -36,7 +36,8 @@ namespace SzakdolgozatAppMvc.Controllers
         [HttpGet]
         public ActionResult Regisztracio()
         {
-            return View();
+            UserEditModel userEdit = new UserEditModel();
+            return View(userEdit);
         }
 
         [HttpPost]
@@ -45,5 +46,12 @@ namespace SzakdolgozatAppMvc.Controllers
             userService.Add(eredmeny);
             return View("Index");
         }
+        public ActionResult Profil(int id)
+        {
+            UserEditModel pm = new UserEditModel();
+            pm = userService.GetUser(id);
+            return View(pm);
+        }
+
     }
 }

@@ -1,19 +1,16 @@
 ﻿@model SzakdolgozatAppMvc.Models.UserEditModel
 
-@Scripts.Render("~/bundles/login")
 
 @{
 
 }
-@Html.IsaHidden("Id",Model.Id)
+@Html.IsaHidden("Id", Model.Id)
 <div class="col-xs-12 col-md-6 col-lg-6 col-xl-6">
-    <h1 class="title">Regisztráció</h1>
+    <h1 class="title">Profilom</h1>
     @Html.IsaTextBox("UserName", "Felhasználó név:", Model.UserName)
     @Html.IsaTextBox("BornName", "Nyomtatott név:", Model.Name)
-    @Html.IsaTextBox("Password", "Jelszó:", Model.Password,false,true)
-    @Html.IsaTextBox("Password2", "Jelszó mégegyszer:", Model.Password2,false,true)
-    @Html.IsaTextBox("City","Irányítószám:",Model.City)
-    @Html.IsaTextBox("Address","Város:",Model.Address)
+    @Html.IsaTextBox("City", "Irányítószám:", Model.City)
+    @Html.IsaTextBox("Address", "Város:", Model.Address)
     <footer class="fixed-bottom">
         <div class="row">
             <div class="text-center row ">
@@ -25,7 +22,6 @@
                     </div>
                     <div class="col-md-10" id="functionButtonMenu">
 
-                        <button class="btn-primary btn functionButtonVisible" id="Mentes_Button" onclick="submitForm();" type="button"><i data-icon="N"></i>Mentés</button>
                         <button class="btn-primary btn functionButtonVisible" id="Megse_Button" onclick="Cancel()" type="button"><i data-icon="w"></i>Mégse</button>
 
                     </div>

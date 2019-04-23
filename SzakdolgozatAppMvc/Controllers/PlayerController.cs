@@ -32,19 +32,10 @@ namespace SzakdolgozatAppMvc.Controllers
         }
 
         public ActionResult GetPlayer()
-        { 
-            using (IsaszegDB db = new IsaszegDB())
-            {
-                var result = (from c in db.T_USER
-                              select new UserModel
-                              {
-                                  Id = c.Id,
-                                  Name = c.C_NAME,
-                                  Address = c.C_ADDRESS,
-                                  City = c.C_ISZ
-                              }).ToList();
-                return Json(new { rows = result }, JsonRequestBehavior.AllowGet);
-            }
+        {
+            UserService userService = new UserService();
+            List<UserModel> userModels = userService.GetList();
+            return Json(new { rows = userModels }, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult Felnott()
@@ -116,7 +107,7 @@ namespace SzakdolgozatAppMvc.Controllers
 
         public ActionResult Add(int id)
         {
-            PlayerModel playerModel = new PlayerModel();
+            PlayerGridModel playerModel = new PlayerGridModel();
             playerModel.CsapatId = id;
             return View("Add",playerModel);
         }

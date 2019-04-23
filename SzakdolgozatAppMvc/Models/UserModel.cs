@@ -14,4 +14,16 @@ namespace SzakdolgozatAppMvc.Models
         public string Password { get; set; }
         public string UserName { get; set; }
     }
+
+    public class UserEditModel
+    {
+
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public int? City { get; set; }
+        public string Password { get; set; }
+        public string Password2 { get; set; }
+        public string UserName { get; set; }
+    }
 }

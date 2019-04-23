@@ -10,7 +10,7 @@ namespace SzakdolgozatAppMvc
     public static class HtmlExtensions
     {
         public static MvcHtmlString IsaTextBox(this HtmlHelper htmlHelper,string divId, string labelname, object expression,
-            bool readonlyE=false)
+            bool readonlyE=false,bool password=false)
         {
             TagBuilder div = new TagBuilder("div");
             div.MergeAttribute("class", "form-row");
@@ -30,8 +30,10 @@ namespace SzakdolgozatAppMvc
             {
                 input.MergeAttribute("readonly", readonlyE.ToString());
             }
+            if(!password)
             input.MergeAttribute("type", "text");
-            if(expression != null)
+            else input.MergeAttribute("type", "password");
+            if (expression != null)
             input.MergeAttribute("value", expression.ToString());
             else input.MergeAttribute("value", "");
             divin.InnerHtml = input.ToString();

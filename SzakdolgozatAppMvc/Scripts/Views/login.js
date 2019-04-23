@@ -31,7 +31,7 @@ function submitForm() {
     if ($('input[name$=Pswd]').val() !== $('input[name$=Pswd2]').val())
         window.alert('Nem egyezik a két jelsző');
     else {
-        var myData = { UserName: $('input[id$=UserName]').val(), Name: $('input[id$=BornName]').val(), Password: $('input[name$=Pswd]').val(), Address: $('input[name$=Address]').val(), City: $('input[name$=City]').val() };
+        var myData = { UserName: $('input[id$=UserName]').val(), Name: $('input[id$=BornName]').val(), Password: $('input[name$=Password]').val(), Address: $('input[name$=Address]').val(), City: $('input[name$=City]').val() };
         
         $.ajax(
             {

@@ -1,4 +1,4 @@
-﻿@model SzakdolgozatAppMvc.Models.PlayerModel
+﻿@model SzakdolgozatAppMvc.Models.PlayerGridModel
 
 @section scripts{
 
@@ -14,24 +14,7 @@
     {
         @Html.IsaHidden("CsapatId",Model.CsapatId)
         @Html.IsaTextBox("PlayerName", "Játékos neve:", Model.Name)
-
-        <div class="form-row" id="PosztId">
-            <label class="col-xs-12 col-sm-12 col-md-5 col-lg-5 col-xl-4 col-form-label" for="">Poszt</label>
-            <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-8">
-                <ul class="clearfix group-horizontal toggle-group input-group">
-                    <li class="toggle-list-item">
-                        <button class="radio-btn btn-secondary btn" type="button">Kapus</button>
-                        <input class="form-control ignore" data-val="true" data-val-required="The PosztId field is required." id="PosztId" name="PosztId" type="radio" value="0">
-                    </li>
-                    <li class="toggle-list-item">
-                        <button class="radio-btn btn-secondary btn" type="button" onclick="checkRadio('PosztId','1')">Védő</button>
-                        <input class="form-control ignore" id="PosztId" name="PosztId" type="radio" value="1"></li>
-                    <li class="toggle-list-item"><button class="radio-btn btn-secondary btn btn-primary" type="button">Középpályás</button><input checked="checked" class="form-control ignore" id="PosztId" name="PosztId" type="radio" value="2"></li>
-                    <li class="toggle-list-item"><button class="radio-btn btn-secondary btn" type="button">Csatár</button><input class="form-control ignore" id="PosztId" name="PosztId" type="radio" value="4"></li>
-                </ul><span class="help-block"><span class="field-validation-valid" data-valmsg-for="PosztId" data-valmsg-replace="true"></span></span>
-            </div>
-        </div>
-
+        @Html.IsaTextBox("Poszt","Posztja:",Model.Poszt)
         @*@Html.EnumDropDownListFor(2)*@
         @Html.IsaTextBox("BornYear", "Születési év:", Model.Bornyear)
         @Html.IsaTextBox("Age", "Életkor:", Model.Age, true)

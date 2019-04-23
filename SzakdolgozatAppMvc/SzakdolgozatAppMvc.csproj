@@ -787,6 +787,7 @@
     <Content Include="Views\Player\Edit.cshtml" />
     <Content Include="Views\Home\Regisztracio.cshtml" />
     <Content Include="Views\Player\Add.cshtml" />
+    <Content Include="Views\Home\Profil.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
