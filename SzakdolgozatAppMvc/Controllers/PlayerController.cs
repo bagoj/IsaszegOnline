@@ -80,10 +80,10 @@ namespace SzakdolgozatAppMvc.Controllers
             return View(pgm);
         }
         [HttpPost]
-        public bool Edit(PlayerModel pm)
+        public ActionResult Edit(PlayerModel pm)
         {
             ps.Edit(pm);
-            return true;
+            return View("FelnottIndex");
         }
 
         public ActionResult Details(int? id)

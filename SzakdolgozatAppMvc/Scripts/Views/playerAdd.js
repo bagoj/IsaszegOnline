@@ -94,7 +94,7 @@ function submitFormEdit() {
             poszt = -1;
     }
     if (poszt !== -1) {
-        var myData = { Id: $('input[id$=Id]').val(), CsapatId: $('input[id$=CsapatId]').val(), Name: $('input[name$=Name]').val(), PosztId: poszt, BornYear: $('input[name$=BornYear]').val(), Age: $('input[name$=Age]').val() };
+        var myData = { Id: $('input[id$=EntityID]').val(), CsapatId: $('input[id$=CsapatId]').val(), Name: $('input[name$=Name]').val(), PosztId: poszt, BornYear: $('input[name$=BornYear]').val(), Age: $('input[name$=Age]').val() };
         $.ajax({
             type: 'POST',
             url: window.location.origin + '/Player/Edit',

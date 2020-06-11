@@ -69,21 +69,17 @@ namespace SzakdolgozatAppMvc
             TagBuilder select = new TagBuilder("select");
             select.MergeAttribute("class", "js-example-basic-single");
             TagBuilder option1 = new TagBuilder("option");
-            option1.MergeAttribute("value", Position.Kapus.ToString());
+            option1.MergeAttribute("value", "0");
             option1.InnerHtml = "Kapus";
             TagBuilder option2 = new TagBuilder("option");
-            option2.MergeAttribute("value", Position.Védő.ToString());
+            option2.MergeAttribute("value", "1");
             option2.InnerHtml = "Védő";
             TagBuilder option3 = new TagBuilder("option");
-            option3.MergeAttribute("value", Position.Középpályás.ToString());
+            option3.MergeAttribute("value", "2");
             option3.InnerHtml = "Középpályás";
             TagBuilder option4 = new TagBuilder("option");
-            option4.MergeAttribute("value", Position.Csatár.ToString());
+            option4.MergeAttribute("value", "3");
             option4.InnerHtml = "Csatár";
-            /* <select class="js-example-basic-single" name="Posztd" multiple="multiple">
-            <option value="1">Kapus</option>
-            <option value="2">Védő</option>
-        </select>*/
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(option1.ToString());
             sb.AppendLine(option2.ToString());
