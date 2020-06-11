@@ -7,6 +7,9 @@
     });
 });
 
+$(document).ready(function () {
+    $('.js-example-basic-single').select2();
+});
 
 function Cancel() {
     window.location = window.location.protocol + "/Home/About";

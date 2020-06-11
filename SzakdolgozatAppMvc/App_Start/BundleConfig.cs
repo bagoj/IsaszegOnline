@@ -34,7 +34,9 @@ namespace SzakdolgozatAppMvc
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/Views/layout.js"));
+                      "~/Scripts/Views/layout.js",
+                      "~/Scripts/select2.min.js",
+                      "~/Scripts/select2.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/Theme/base/core.css",
@@ -50,7 +52,9 @@ namespace SzakdolgozatAppMvc
                 "~/Content/Theme/base/progressbar.css",
                 "~/Content/custom-bootstrap4/bootstrap.css",
                 "~/Content/bootstrap-table.css",
-                "~/Content/toastr.css"
+                "~/Content/toastr.css",
+                "~/Content/css/select2.min.css",
+                "~/Content/css/select2.css"
                 ));
         }
     }
