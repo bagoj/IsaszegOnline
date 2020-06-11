@@ -110,7 +110,7 @@ namespace SzakdolgozatAppMvc
             select.MergeAttribute("name", divId);
             if (readonlyE)
             {
-                select.MergeAttribute("readonly", readonlyE.ToString());
+                select.MergeAttribute("disabled", readonlyE.ToString());
             }
             select.InnerHtml = sb.ToString();
             divin.InnerHtml = select.ToString();

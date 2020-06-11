@@ -38,7 +38,7 @@ namespace SzakdolgozatAppMvc.Models
             pgm.Name = x.Name;
             pgm.Bornyear = x.Bornyear;
             pgm.Age = x.Age;
-
+            pgm.CsapatId = x.CsapatId;
             return pgm;
         }
     }

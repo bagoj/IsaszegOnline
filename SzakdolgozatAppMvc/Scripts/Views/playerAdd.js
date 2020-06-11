@@ -12,7 +12,21 @@ $(document).ready(function () {
 });
 
 function Cancel() {
-    window.location = window.location.protocol + "/Home/About";
+    switch ($('input[id$=CsapatId]').val()) {
+        case '0':
+            window.location = window.location.protocol + "/Player/FelnottIndex";
+            break;
+        case '1':
+            window.location = window.location.protocol + "/Player/IfjusagiIndex";
+            break;
+        case '2':
+            window.location = window.location.protocol + "/Player/NoiIndex";
+            break;
+        default:
+            window.location = window.location.protocol + "/Home/About";
+            break;
+        // code block
+    }
 }
 
 function szuletesiEvChange(control) {
@@ -96,7 +110,10 @@ function submitFormEdit() {
         $.ajax({
             type: 'POST',
             url: window.location.origin + '/Player/Edit',
-            data: { pm: myData }
+            data: { pm: myData },
+            success: function (json) {
+                window.alert("Sikeresen elmentve!");
+            },
         }).done(function (data) {
             switch ($('input[id$=CsapatId]').val()) {
                 case '0':
