@@ -118,5 +118,14 @@ namespace SzakdolgozatAppMvc.BusinessLogic
             }
             return true;
         }
+
+        public int GetCsapat(int? id)
+        {
+            using (IsaszegDB db = new IsaszegDB())
+            {
+                var result = db.T_PLAYER.SingleOrDefault(x => x.Id == id);
+                return result.C_CSAPATID;
+            }
+        }
     }
 }

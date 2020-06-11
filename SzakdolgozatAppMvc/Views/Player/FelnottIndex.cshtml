@@ -22,8 +22,14 @@
 @section scripts{
 
     @Scripts.Render("~/bundles/grid")
-    <script>
-        $(function () {
+<script>
+
+    $(function () {
+            var msg = '@TempData["Msg"]';
+    if (msg.length) {
+        alert(msg);
+        }
+
             $grid = $("#jqGrid").jqGrid({
         url: '@Url.Action("Felnott","Player")',
         mtype: 'GET',
@@ -49,5 +55,5 @@
 
         });
 
-    </script>
+</script>
 }

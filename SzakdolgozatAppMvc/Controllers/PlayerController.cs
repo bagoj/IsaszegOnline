@@ -83,7 +83,7 @@ namespace SzakdolgozatAppMvc.Controllers
         public ActionResult Edit(PlayerModel pm)
         {
             ps.Edit(pm);
-            return View("FelnottIndex");
+            return EgyikIndex(pm.CsapatId);
         }
 
         public ActionResult Details(int? id)
@@ -97,12 +97,28 @@ namespace SzakdolgozatAppMvc.Controllers
             return View("Edit",pgm);
         }
 
+        [HttpGet]
         public ActionResult Delete(int? id)
         {
             if (id == null) throw new ArgumentNullException(nameof(id));
+            int csapatid = ps.GetCsapat(id);
             ps.Delete(id);
             //DELETE
-            return RedirectToAction("Home/Index");
+            return EgyikIndex(csapatid);
+        }
+
+        private ActionResult EgyikIndex(int csapatid)
+        {
+            switch (csapatid)
+            {
+                case (int)Enums.Enums.CsapatAzon.Felnott:
+                    return RedirectToAction("FelnottIndex"); 
+                case (int)Enums.Enums.CsapatAzon.Ifjusagi:
+                    return RedirectToAction("IfjusagiIndex");
+                case (int)Enums.Enums.CsapatAzon.Noi:
+                    return RedirectToAction("NoiIndex"); 
+            }
+            return RedirectToAction("Home", "Index");
         }
 
         public ActionResult Add(int id)
@@ -112,10 +128,11 @@ namespace SzakdolgozatAppMvc.Controllers
             return View("Add",playerModel);
         }
         [HttpPost]
-        public bool Add(PlayerModel model)
+        public ActionResult Add(PlayerModel model)
         {
             ps.Add(model);
-            return true;
+            TempData["Msg"] = "Sikeres mentés !";
+            return EgyikIndex(model.CsapatId);
         }
     }
 }
