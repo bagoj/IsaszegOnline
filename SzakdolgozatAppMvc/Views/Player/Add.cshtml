@@ -8,34 +8,35 @@
     @{
 
     }
-<div class="col-xs-12 col-md-6 col-lg-6 col-xl-6">
-    <h1 class="title">@ViewBag.Title</h1>
-    @using (Html.BeginForm("Add", "Player", FormMethod.Post))
-    {
-        @Html.IsaHidden("CsapatId",Model.CsapatId)
-        @Html.IsaTextBox("PlayerName", "Játékos neve:", Model.Name)
-        @Html.IsaTextBox("Poszt","Posztja:",Model.Poszt)
-        @*@Html.EnumDropDownListFor(2)*@
-        @Html.IsaTextBox("BornYear", "Születési év:", Model.Bornyear)
-        @Html.IsaTextBox("Age", "Életkor:", Model.Age, true)
-        <footer class="fixed-bottom">
-            <div class="row">
-                <div class="text-center row ">
-                    <div class="row btn-group col-md-10" id="functionButtonMenuRow">
-                        <div class="col-md-1">
-                            <button class="btn-primary btn hidden" type="button" id="pageLeft">
-                                <i data-icon="R"></i>
-                            </button>
-                        </div>
-                        <div class="col-md-10" id="functionButtonMenu">
+    <div class="col-xs-12 col-md-6 col-lg-6 col-xl-6">
+        <h1 class="title">@ViewBag.Title</h1>
+        @using (Html.BeginForm("Add", "Player", FormMethod.Post))
+        {
+            @Html.IsaHidden("CsapatId", Model.CsapatId)
+            @Html.IsaTextBox("PlayerName", "Játékos neve:", Model.Name)
+            @Html.Select2PosCompuond(typeof(SzakdolgozatAppMvc.Enums.Enums.Position), "PlayerPost", "Posztja: ", Model.Poszt, false)
+            @*@Html.IsaTextBox("Poszt","Posztja:",Model.Poszt)
+            @Html.EnumDropDownListFor(2)*@
+            @Html.IsaTextBox("BornYear", "Születési év:", Model.Bornyear)
+            @Html.IsaTextBox("Age", "Életkor:", Model.Age, true)
+            <footer class="fixed-bottom">
+                <div class="row">
+                    <div class="text-center row ">
+                        <div class="row btn-group col-md-10" id="functionButtonMenuRow">
+                            <div class="col-md-1">
+                                <button class="btn-primary btn hidden" type="button" id="pageLeft">
+                                    <i data-icon="R"></i>
+                                </button>
+                            </div>
+                            <div class="col-md-10" id="functionButtonMenu">
 
-                            <button class="btn-primary btn functionButtonVisible" id="Mentes_Button" onclick="submitForm();" type="button"><i data-icon="N"></i>Mentés</button>
-                            <button class="btn-primary btn functionButtonVisible" id="Megse_Button" onclick="Cancel()" type="button"><i data-icon="w"></i>Mégse</button>
+                                <button class="btn-primary btn functionButtonVisible" id="Mentes_Button" onclick="submitForm();" type="button"><i data-icon="N"></i>Mentés</button>
+                                <button class="btn-primary btn functionButtonVisible" id="Megse_Button" onclick="Cancel()" type="button"><i data-icon="w"></i>Mégse</button>
 
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </footer>
-    }
-</div>
+            </footer>
+        }
+    </div>

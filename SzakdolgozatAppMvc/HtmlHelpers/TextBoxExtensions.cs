@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Ajax.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -53,9 +54,10 @@ namespace SzakdolgozatAppMvc
             return new MvcHtmlString(input.ToString());
         }
 
-        public static MvcHtmlString Select2PosCompuond(this HtmlHelper htmlHelper, string id, string divId, string labelname, object expression, 
+        public static MvcHtmlString Select2PosCompuond(this HtmlHelper htmlHelper, Type enumType, string divId, string labelname, object expression, 
             bool readonlyE = false)
         {
+            var typelist = enumType.GetEnumValues();
             TagBuilder div = new TagBuilder("div");
             div.MergeAttribute("class", "form-row");
             div.MergeAttribute("id", divId);
@@ -68,30 +70,42 @@ namespace SzakdolgozatAppMvc
             divin.MergeAttribute("class", "select-control");
             TagBuilder select = new TagBuilder("select");
             select.MergeAttribute("class", "js-example-basic-single");
-            TagBuilder option1 = new TagBuilder("option");
-            option1.MergeAttribute("value", "0");
-            option1.InnerHtml = "Kapus";
-            TagBuilder option2 = new TagBuilder("option");
-            option2.MergeAttribute("value", "1");
-            option2.InnerHtml = "Védő";
-            TagBuilder option3 = new TagBuilder("option");
-            option3.MergeAttribute("value", "2");
-            option3.InnerHtml = "Középpályás";
-            TagBuilder option4 = new TagBuilder("option");
-            option4.MergeAttribute("value", "3");
-            option4.InnerHtml = "Csatár";
-            switch (expression.ToString())
+            int i= 0; StringBuilder sb = new StringBuilder();
+            foreach (var x in typelist)
             {
-                case "Kapus": option1.MergeAttribute("selected", "selected"); break;
-                case "Védő": option2.MergeAttribute("selected", "selected"); break;
-                case "Középpályás": option3.MergeAttribute("selected", "selected"); break;
-                case "Csatár": option4.MergeAttribute("selected", "selected"); break;
+                TagBuilder option = new TagBuilder("option");
+                option.MergeAttribute("value", i.ToString());
+                if((expression != null) && x.ToString() == expression.ToString()) option.MergeAttribute("selected", "selected");
+                option.InnerHtml = x.ToString();
+                sb.AppendLine(option.ToString());
+                i++;
             }
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine(option1.ToString());
-            sb.AppendLine(option2.ToString());
-            sb.AppendLine(option3.ToString());
-            sb.AppendLine(option4.ToString());
+            #region rossz megoldás
+            //TagBuilder option1 = new TagBuilder("option");
+            //option1.MergeAttribute("value", "0");
+            //option1.InnerHtml = "Kapus";
+            //TagBuilder option2 = new TagBuilder("option");
+            //option2.MergeAttribute("value", "1");
+            //option2.InnerHtml = "Védő";
+            //TagBuilder option3 = new TagBuilder("option");
+            //option3.MergeAttribute("value", "2");
+            //option3.InnerHtml = "Középpályás";
+            //TagBuilder option4 = new TagBuilder("option");
+            //option4.MergeAttribute("value", "3");
+            //option4.InnerHtml = "Csatár";
+            //switch (expression.ToString())
+            //{
+            //    case "Kapus": option1.MergeAttribute("selected", "selected"); break;
+            //    case "Védő": option2.MergeAttribute("selected", "selected"); break;
+            //    case "Középpályás": option3.MergeAttribute("selected", "selected"); break;
+            //    case "Csatár": option4.MergeAttribute("selected", "selected"); break;
+            //}
+            //StringBuilder sb = new StringBuilder();
+            //sb.AppendLine(option1.ToString());
+            //sb.AppendLine(option2.ToString());
+            //sb.AppendLine(option3.ToString());
+            //sb.AppendLine(option4.ToString());
+            #endregion
             select.MergeAttribute("id", divId);
             select.MergeAttribute("name", divId);
             if (readonlyE)

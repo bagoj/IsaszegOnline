@@ -29,7 +29,7 @@ function checkRadio(groupName, value) {
 
 function submitForm() {
     var poszt;
-    switch ($('input[id$=Poszt]').val()) {
+    switch ($('#select2-PlayerPost-container').attr('title')) {
         case 'Kapus':
             poszt = 0;
             break;
@@ -45,7 +45,6 @@ function submitForm() {
         default:
             poszt = -1;
     }
-    if (poszt !== -1) {
         var myData = { CsapatId: $('input[id$=CsapatId]').val(), Name: $('input[name$=Name]').val(), PosztId: poszt, BornYear: $('input[name$=BornYear]').val(), Age: $('input[name$=Age]').val() };
         $.ajax({
             type: 'POST',
@@ -69,10 +68,7 @@ function submitForm() {
             }
 
         }).fail(function (data) { window.alert('Sikertelen mentés!'); });
-    }
-    else {
-        window.alert('A poszt mezőben rossz érték van megadva! (Kapus,Védő,Középpályás,Csatár');
-    }
+    
 }
 
 function submitFormEdit() {
@@ -93,7 +89,6 @@ function submitFormEdit() {
         default:
             poszt = -1;
     }
-    if (poszt !== -1) {
         var myData = { Id: $('input[id$=EntityID]').val(), CsapatId: $('input[id$=CsapatId]').val(), Name: $('input[name$=Name]').val(), PosztId: poszt, BornYear: $('input[name$=BornYear]').val(), Age: $('input[name$=Age]').val() };
         $.ajax({
             type: 'POST',
@@ -117,7 +112,5 @@ function submitFormEdit() {
             }
 
         }).fail(function (data) { window.alert('Sikertelen mentés!'); });
-    } else {
-        window.alert('A poszt mezőben rossz érték van megadva! (Kapus,Védő,Középpályás,Csatár)');
-    }
+    
 }
