@@ -91,7 +91,7 @@ namespace SzakdolgozatAppMvc.Controllers
             if (id == null) throw new ArgumentNullException(nameof(id));
             PlayerModel pm = ps.Get(id);
             PlayerGridModel pgm = (PlayerGridModel)pm;
-            ViewBag.Title = pgm.Name + " szerkesztése";
+            ViewBag.Title = pgm.Name + " megtekintése";
             ViewBag.ReadOnly = true;
             pgm.Age = DateTime.Now.Year - pgm.Bornyear;
             return View("Edit",pgm);
@@ -125,13 +125,22 @@ namespace SzakdolgozatAppMvc.Controllers
         {
             PlayerGridModel playerModel = new PlayerGridModel();
             playerModel.CsapatId = id;
+            switch (id)
+            {
+                case (int)Enums.Enums.CsapatAzon.Felnott:
+                    ViewBag.Title = "Felnőtt játékos hozzáadása:"; break;
+                case (int)Enums.Enums.CsapatAzon.Ifjusagi:
+                    ViewBag.Title = "Ifjusági játékos hozzáadása:"; break;
+                case (int)Enums.Enums.CsapatAzon.Noi:
+                    ViewBag.Title = "Női játékos hozzáadása:"; break;
+            }
             return View("Add",playerModel);
         }
         [HttpPost]
         public ActionResult Add(PlayerModel model)
         {
             ps.Add(model);
-            TempData["Msg"] = "Sikeres mentés !";
+            TempData["Msg"] = "Sikeres mentés!";
             return EgyikIndex(model.CsapatId);
         }
     }

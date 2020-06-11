@@ -49,7 +49,10 @@ function submitForm() {
         $.ajax({
             type: 'POST',
             url: window.location.origin + '/Player/Add',
-            data: { model: myData }
+            data: { model: myData },
+            success: function (json) {
+                window.alert("Sikeresen elmentve!");
+                },
         }).done(function (data) {
             switch ($('input[id$=CsapatId]').val()) {
                 case '0':
