@@ -115,6 +115,6 @@ function submitFormEdit() {
 
         }).fail(function (data) { window.alert('Sikertelen mentés!'); });
     } else {
-        window.alert('A poszt mezőben rossz érték van megadva! (Kapus,Védő,Középpályás,Csatár');
+        window.alert('A poszt mezőben rossz érték van megadva! (Kapus,Védő,Középpályás,Csatár)');
     }
 }
