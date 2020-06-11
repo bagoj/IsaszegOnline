@@ -80,6 +80,13 @@ namespace SzakdolgozatAppMvc
             TagBuilder option4 = new TagBuilder("option");
             option4.MergeAttribute("value", "3");
             option4.InnerHtml = "Csatár";
+            switch (expression.ToString())
+            {
+                case "Kapus": option1.MergeAttribute("selected", "selected"); break;
+                case "Védő": option2.MergeAttribute("selected", "selected"); break;
+                case "Középpályás": option3.MergeAttribute("selected", "selected"); break;
+                case "Csatár": option4.MergeAttribute("selected", "selected"); break;
+            }
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(option1.ToString());
             sb.AppendLine(option2.ToString());

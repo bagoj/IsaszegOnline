@@ -17,7 +17,7 @@
         <h1 class="title">@ViewBag.Title</h1>
         @Html.IsaTextBox("PlayerName", "Játékos neve:", Model.Name, editViewAttr)
         @Html.Select2PosCompuond("PlayerPost", "PlayerPost","Posztja: ",Model.Poszt,editViewAttr)
-        @Html.IsaTextBox("Poszt", "Posztja: ", Model.Poszt, editViewAttr)
+        @*@Html.IsaTextBox("Poszt", "Posztja: ", Model.Poszt, editViewAttr)*@
         @Html.IsaTextBox("BornYear", "Születési év:", Model.Bornyear, editViewAttr)
         @Html.IsaTextBox("Age", "Életkor:", Model.Age, true)
         <footer class="fixed-bottom">

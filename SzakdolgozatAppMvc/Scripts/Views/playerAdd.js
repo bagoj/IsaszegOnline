@@ -77,7 +77,7 @@ function submitForm() {
 
 function submitFormEdit() {
     var poszt;
-    switch ($('input[id$=Poszt]').val()) {
+    switch ($('#select2-PlayerPost-container').attr('title')) {
         case 'Kapus':
             poszt = 0;
             break;
