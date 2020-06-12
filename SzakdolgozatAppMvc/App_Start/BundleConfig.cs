@@ -24,7 +24,9 @@ namespace SzakdolgozatAppMvc
                         "~/Scripts/Views/login.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/grid").Include(
-                "~/Scripts/jqGrid/grid.locale-en.js",
+                "~/Scripts/i18n/grid.locale-hu.js",
+                "~/Scripts/jquery.jqGrid.min.js.js",
+                "~/Scripts/jquery.jqGrid.js",
                 "~/Scripts/jqGrid/jquery.jqGrid.js"
                 ));
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
@@ -56,7 +58,10 @@ namespace SzakdolgozatAppMvc
                 "~/Content/bootstrap-table.css",
                 "~/Content/toastr.css",
                 "~/Content/css/select2.min.css",
-                "~/Content/css/select2.css"
+                "~/Content/css/select2.css",
+                "~/Content/jquery.jqGrid/ui.jqgrid.css",
+                "~/Content/themes/base/minified/jquery-ui.min.css",
+                "~/Content/gridiconspager.css"
                 ));
         }
     }

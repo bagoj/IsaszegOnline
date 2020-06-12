@@ -26,7 +26,9 @@
 
     <script>
         $(function () {
-            $grid = $("#jqGrid").jqGrid({
+            var grid_selector = "#jqGrid";
+            var pager_selector = "#jqg-pager";
+            jQuery(grid_selector).jqGrid({
         url: '@Url.Action("Noi","Player")',
         mtype: 'GET',
         datatype: 'json',
@@ -36,19 +38,52 @@
             { label: 'Poszt', name: 'Poszt' },
             { label: 'Kor', name: 'Age' },
             { label: 'Születési év', name: 'Bornyear' },
-            { name: 'Lehetőségek', index: 'price', width: 60, align: "center", editable: true, formatter: formatOperations }
-        ],
-                rowNum: 500, // number of rows displayed
-                loadonce: false, // load only once
-                sortname: 'NAME', // sort by default by NAME column
-                sortorder: "asc",
-                width: window.innerWidth - 80, // grid width
-                height: 300, // grid height
-                viewrecords: true, // display the number of records
-                caption: "Customers",
-                pager: 'jqg-pager' // navigation item id
-    });
-});
+                    { name: 'Szerkesztés', index: 'Edit', align: 'left', formatter: EditFormatter, search: false, sortable: false },
+                    { name: 'Megtekintés', index: 'Details', align: 'left', formatter: DetailsFormatter, search: false, sortable: false },
+                    { name: 'Törlés', index: 'Delete', align: 'left', formatter: DeleteFormatter, search: false, sortable: false },
+                ],
+                loadonce: true,
+                rowNum: 30,
+                rowList: [5, 10, 20, 30],
+                pager: pager_selector,
+                altRows: true,
+                multiboxonly: true,
+                caption: "jqGrid with listing",
+                loadComplete: function () {
+                    var table = this;
+                    setTimeout(function () {
+                        updatePagerIcons(table);
+                    }, 0);
+                }
+            });
+        });
+
+        function updatePagerIcons(table) {
+            var replacement =
+            {
+                'ui-icon-seek-first': 'ace-icon fa fa-angle-double-left bigger-140',
+                'ui-icon-seek-prev': 'ace-icon fa fa-angle-left bigger-140',
+                'ui-icon-seek-next': 'ace-icon fa fa-angle-right bigger-140',
+                'ui-icon-seek-end': 'ace-icon fa fa-angle-double-right bigger-140'
+            };
+            $('.ui-pg-table:not(.navtable) > tbody > tr > .ui-pg-button > .ui-icon').each(function () {
+                var icon = $(this);
+                var $class = $.trim(icon.attr('class').replace('ui-icon', ''));
+
+                if ($class in replacement) icon.attr('class', 'ui-icon ' + replacement[$class]);
+            })
+        }
+        function DetailsFormatter(cellvalue, options, rowObject) {
+            return "<a href='/Player/Details?id=" + rowObject.Id + "'>Megtekintés</a>";
+        }
+        function EditFormatter(cellvalue, options, rowObject) {
+            return "<a href='/Player/Edit?id=" + rowObject.Id + "'>Szerkesztés</a>";
+
+        }
+        function DeleteFormatter(cellvalue, options, rowObject) {
+            return "<a href='/Player/Delete?id=" + rowObject.Id + "'>Törlés</a>";
+
+        }
     </script>
 }
 

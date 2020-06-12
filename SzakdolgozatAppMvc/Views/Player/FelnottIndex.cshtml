@@ -24,33 +24,70 @@
     @Scripts.Render("~/bundles/grid")
     <script>
         $(function () {
-            $grid = $("#jqGrid").jqGrid({
-        url: '@Url.Action("Felnott","Player")',
-        mtype: 'GET',
-        datatype: 'json',
-        colModel: [
-            { label: 'Id', name: 'Id', hidden: true },
-            { label: 'Név', name: 'Name' },
-            { label: 'Poszt', name: 'Poszt' },
-            { label: 'Kor', name: 'Age' },
-            { label: 'Születési év', name: 'Bornyear' },
-            { name: 'Lehetőségek', index: 'price', width: 60, align: "center", editable: true, formatter: formatOperations }
-                ],
-                search: true,
-                pager: '#grid-pager',
-                jsonReader: { cell: "" },
-                rowNum: 10,
-                rowList: [5, 10, 20, 50],
-                sortname: 'id',
-                sortorder: 'asc',
-                viewrecords: true,
-                height: "100%",
-                caption: "Multiple search with local data"
-            });
-            $grid.jqGrid('navGrid', '#grid-pager', { add: false, edit: false, del: false, search: true, refresh: true },
-                {}, {}, {}, { multipleSearch: true, multipleGroup: true, showQuery: true });
-        });
-        
+            var grid_selector = "#jqGrid";
+            var pager_selector = "#grid-pager";
 
+            jQuery(grid_selector).jqGrid({
+                url: '@Url.Action("Felnott","Player")',
+                mtype: 'GET',
+                datatype: 'json',
+                colModel: [
+                    { label: 'Id', name: 'Id', hidden: true },
+                    { label: 'Név', name: 'Name' },
+                    { label: 'Poszt', name: 'Poszt' },
+                    { label: 'Kor', name: 'Age' },
+                    { label: 'Születési év', name: 'Bornyear' },
+                    { name: 'Szerkesztés', index: 'Edit', align: 'left', formatter: EditFormatter, search: false, sortable: false },
+                    { name: 'Megtekintés', index: 'Details', align: 'left', formatter: DetailsFormatter, search: false, sortable: false },
+                    { name: 'Törlés', index: 'Delete', align: 'left', formatter: DeleteFormatter, search: false, sortable: false },
+
+                    //{ name: 'Lehetőségek', index: 'price', width: 60, align: "center", editable: true/*, formatter: formatOperations*/ }
+                ],
+                loadonce: true,
+                rowNum: 30,
+                rowList: [5,10, 20, 30],
+                pager: pager_selector,
+                altRows: true,
+                multiboxonly: true,
+                caption: "jqGrid with listing",
+                loadComplete: function () {
+                    var table = this;
+                    setTimeout(function () {
+                        updatePagerIcons(table);
+                    }, 0);
+                }
+            });
+
+        });
+
+        function updatePagerIcons(table) {
+            var replacement =
+            {
+                'ui-icon-seek-first': 'ace-icon fa fa-angle-double-left bigger-140',
+                'ui-icon-seek-prev': 'ace-icon fa fa-angle-left bigger-140',
+                'ui-icon-seek-next': 'ace-icon fa fa-angle-right bigger-140',
+                'ui-icon-seek-end': 'ace-icon fa fa-angle-double-right bigger-140'
+            };
+            $('.ui-pg-table:not(.navtable) > tbody > tr > .ui-pg-button > .ui-icon').each(function () {
+                var icon = $(this);
+                var $class = $.trim(icon.attr('class').replace('ui-icon', ''));
+
+                if ($class in replacement) icon.attr('class', 'ui-icon ' + replacement[$class]);
+            })
+        }
+        function DetailsFormatter(cellvalue, options, rowObject) {
+            return "<a href='/Player/Details?id=" + rowObject.Id + "'>Megtekintés</a>";
+        }
+        function EditFormatter(cellvalue, options, rowObject) {
+            return "<a href='/Player/Edit?id=" + rowObject.Id + "'>Szerkesztés</a>";
+
+        }
+        function DeleteFormatter(cellvalue, options, rowObject) {
+            return "<a href='/Player/Delete?id=" + rowObject.Id + "'>Törlés</a>";
+
+        }
+        //"<a href='/Player/Edit?id=" + rowObject.Id + "'><u>Szerkeszt</u></a>  " +
+        //    "<a href='/Player/Details?id=" + rowObject.Id + "'><u>Megtekint</u></a>  " +
+        //    "<a href='/Player/Delete?id=" + rowObject.Id + "'><u>Töröl</u></a>";
     </script>
 }
