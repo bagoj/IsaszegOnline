@@ -15,7 +15,8 @@
             @Html.IsaHidden("CsapatId", Model.CsapatId)
             @Html.IsaTextBox("PlayerName", "Játékos neve:", Model.Name)
             @Html.Select2PosCompuond(typeof(SzakdolgozatAppMvc.Enums.Enums.Position), "PlayerPost", "Posztja: ", Model.Poszt, false)
-            @*@Html.IsaTextBox("Poszt","Posztja:",Model.Poszt)
+            @*@Html.Select2PosCompuond(typeof(SzakdolgozatAppMvc.Enums.Enums.CsapatAzon), "PlayerPost", "Posztja: ", Model.Poszt, false)
+            @Html.IsaTextBox("Poszt","Posztja:",Model.Poszt)
             @Html.EnumDropDownListFor(2)*@
             @Html.IsaTextBox("BornYear", "Születési év:", Model.Bornyear)
             @Html.IsaTextBox("Age", "Életkor:", Model.Age, true)

@@ -1,5 +1,5 @@
 ﻿<table id="jqGrid"></table>
-<div id="jqg-pager"></div>
+<div id="grid-pager"></div>
 <footer class="fixed-bottom">
     <div class="row">
         <div class="text-center row ">
@@ -36,18 +36,21 @@
             { label: 'Születési év', name: 'Bornyear' },
             { name: 'Lehetőségek', index: 'price', width: 60, align: "center", editable: true, formatter: formatOperations }
                 ],
-                rowNum: 500, // number of rows displayed
-                loadonce: false, // load only once
-                sortname: 'NAME', // sort by default by NAME column
-                sortorder: "asc",
-                width: window.innerWidth - 80, // grid width
-                height: 300, // grid height
-                viewrecords: true, // display the number of records
-                caption: "Customers",
-                pager: 'jqg-pager' // navigation item id
+                search: true,
+                pager: '#grid-pager',
+                jsonReader: { cell: "" },
+                rowNum: 10,
+                rowList: [5, 10, 20, 50],
+                sortname: 'id',
+                sortorder: 'asc',
+                viewrecords: true,
+                height: "100%",
+                caption: "Multiple search with local data"
             });
-
+            $grid.jqGrid('navGrid', '#grid-pager', { add: false, edit: false, del: false, search: true, refresh: true },
+                {}, {}, {}, { multipleSearch: true, multipleGroup: true, showQuery: true });
         });
+        
 
     </script>
 }

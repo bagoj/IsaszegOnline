@@ -35,8 +35,10 @@ namespace SzakdolgozatAppMvc
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/Views/layout.js",
-                      "~/Scripts/select2.min.js",
-                      "~/Scripts/select2.js"));
+                      "~/Scripts/jquery-3.3.1.min.js",
+                      "~/Scripts/select2.min.js"
+                      ,"~/Scripts/select2.js"
+                      ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/Theme/base/core.css",
